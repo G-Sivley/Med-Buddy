@@ -7,23 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		904E46A12607C24300E79643 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E46A02607C24300E79643 /* ScheduleViewController.swift */; };
+		904E46A42607C2E500E79643 /* MedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E46A32607C2E500E79643 /* MedListViewController.swift */; };
+		90B383C5260731D4003EF110 /* Quicksand BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 90B383BE260731D3003EF110 /* Quicksand BoldItalic.otf */; };
+		90B383C6260731D4003EF110 /* Quicksand Dash.otf in Resources */ = {isa = PBXBuildFile; fileRef = 90B383BF260731D3003EF110 /* Quicksand Dash.otf */; };
+		90B383C7260731D4003EF110 /* Quicksand Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 90B383C0260731D3003EF110 /* Quicksand Bold.otf */; };
+		90B383C8260731D4003EF110 /* Quicksand Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 90B383C1260731D3003EF110 /* Quicksand Regular.otf */; };
+		90B383C9260731D4003EF110 /* Quicksand Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 90B383C2260731D3003EF110 /* Quicksand Light.otf */; };
+		90B383CA260731D4003EF110 /* Quicksand LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 90B383C3260731D4003EF110 /* Quicksand LightItalic.otf */; };
+		90B383CB260731D4003EF110 /* Quicksand Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 90B383C4260731D4003EF110 /* Quicksand Italic.otf */; };
+		90D3AA6E2607ED8300894F33 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AA6D2607ED8300894F33 /* Constants.swift */; };
 		90EA099226072BD900CABE30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EA099126072BD900CABE30 /* AppDelegate.swift */; };
 		90EA099426072BD900CABE30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EA099326072BD900CABE30 /* SceneDelegate.swift */; };
-		90EA099626072BD900CABE30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EA099526072BD900CABE30 /* ViewController.swift */; };
 		90EA099926072BD900CABE30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90EA099726072BD900CABE30 /* Main.storyboard */; };
 		90EA099B26072BDD00CABE30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90EA099A26072BDD00CABE30 /* Assets.xcassets */; };
 		90EA099E26072BDD00CABE30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90EA099C26072BDD00CABE30 /* LaunchScreen.storyboard */; };
+		90F102592607E65200CF50BE /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F102582607E65200CF50BE /* CustomTabBarViewController.swift */; };
+		90F1025C2607EBE600CF50BE /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F1025B2607EBE600CF50BE /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		904E46A02607C24300E79643 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		904E46A32607C2E500E79643 /* MedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedListViewController.swift; sourceTree = "<group>"; };
+		90B383BE260731D3003EF110 /* Quicksand BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand BoldItalic.otf"; sourceTree = "<group>"; };
+		90B383BF260731D3003EF110 /* Quicksand Dash.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand Dash.otf"; sourceTree = "<group>"; };
+		90B383C0260731D3003EF110 /* Quicksand Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand Bold.otf"; sourceTree = "<group>"; };
+		90B383C1260731D3003EF110 /* Quicksand Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand Regular.otf"; sourceTree = "<group>"; };
+		90B383C2260731D3003EF110 /* Quicksand Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand Light.otf"; sourceTree = "<group>"; };
+		90B383C3260731D4003EF110 /* Quicksand LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand LightItalic.otf"; sourceTree = "<group>"; };
+		90B383C4260731D4003EF110 /* Quicksand Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand Italic.otf"; sourceTree = "<group>"; };
+		90D3AA6D2607ED8300894F33 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		90EA098E26072BD900CABE30 /* Med Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Med Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90EA099126072BD900CABE30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90EA099326072BD900CABE30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		90EA099526072BD900CABE30 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		90EA099826072BD900CABE30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		90EA099A26072BDD00CABE30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90EA099D26072BDD00CABE30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		90EA099F26072BDD00CABE30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90F102582607E65200CF50BE /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
+		90F1025B2607EBE600CF50BE /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		904E46A62607C32700E79643 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				904E46A32607C2E500E79643 /* MedListViewController.swift */,
+				904E46A02607C24300E79643 /* ScheduleViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		90EA098526072BD900CABE30 = {
 			isa = PBXGroup;
 			children = (
@@ -58,13 +89,31 @@
 			children = (
 				90EA099126072BD900CABE30 /* AppDelegate.swift */,
 				90EA099326072BD900CABE30 /* SceneDelegate.swift */,
-				90EA099526072BD900CABE30 /* ViewController.swift */,
+				90F102582607E65200CF50BE /* CustomTabBarViewController.swift */,
+				90F1025B2607EBE600CF50BE /* TabBarViewController.swift */,
+				904E46A62607C32700E79643 /* Views */,
 				90EA099726072BD900CABE30 /* Main.storyboard */,
 				90EA099A26072BDD00CABE30 /* Assets.xcassets */,
 				90EA099C26072BDD00CABE30 /* LaunchScreen.storyboard */,
 				90EA099F26072BDD00CABE30 /* Info.plist */,
+				90D3AA6D2607ED8300894F33 /* Constants.swift */,
+				90EA09BB26072C6900CABE30 /* Fonts */,
 			);
 			path = "Med Buddy";
+			sourceTree = "<group>";
+		};
+		90EA09BB26072C6900CABE30 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				90B383C0260731D3003EF110 /* Quicksand Bold.otf */,
+				90B383BE260731D3003EF110 /* Quicksand BoldItalic.otf */,
+				90B383BF260731D3003EF110 /* Quicksand Dash.otf */,
+				90B383C4260731D4003EF110 /* Quicksand Italic.otf */,
+				90B383C2260731D3003EF110 /* Quicksand Light.otf */,
+				90B383C3260731D4003EF110 /* Quicksand LightItalic.otf */,
+				90B383C1260731D3003EF110 /* Quicksand Regular.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,8 +173,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90B383C6260731D4003EF110 /* Quicksand Dash.otf in Resources */,
+				90B383C7260731D4003EF110 /* Quicksand Bold.otf in Resources */,
 				90EA099E26072BDD00CABE30 /* LaunchScreen.storyboard in Resources */,
+				90B383C5260731D4003EF110 /* Quicksand BoldItalic.otf in Resources */,
+				90B383CB260731D4003EF110 /* Quicksand Italic.otf in Resources */,
 				90EA099B26072BDD00CABE30 /* Assets.xcassets in Resources */,
+				90B383C9260731D4003EF110 /* Quicksand Light.otf in Resources */,
+				90B383CA260731D4003EF110 /* Quicksand LightItalic.otf in Resources */,
+				90B383C8260731D4003EF110 /* Quicksand Regular.otf in Resources */,
 				90EA099926072BD900CABE30 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,9 +193,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90EA099626072BD900CABE30 /* ViewController.swift in Sources */,
 				90EA099226072BD900CABE30 /* AppDelegate.swift in Sources */,
+				90D3AA6E2607ED8300894F33 /* Constants.swift in Sources */,
+				90F102592607E65200CF50BE /* CustomTabBarViewController.swift in Sources */,
 				90EA099426072BD900CABE30 /* SceneDelegate.swift in Sources */,
+				904E46A42607C2E500E79643 /* MedListViewController.swift in Sources */,
+				90F1025C2607EBE600CF50BE /* TabBarViewController.swift in Sources */,
+				904E46A12607C24300E79643 /* ScheduleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
