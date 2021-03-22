@@ -8,7 +8,7 @@
 import UIKit
 
 class CustomTabBarViewController: UITabBarController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,9 +29,8 @@ class CustomTabBarViewController: UITabBarController {
         let buttonX = buttonWidth * 2
         var buttonY = (tabBar.frame.height / 3) * -1
         
-        if (buttonWidth / 4) < (buttonY * -1) {
-            print("This is if")
-        } else {
+        if (buttonWidth / 4) > (buttonY * -1) {
+            // changes buttonY to a higher point so that none of the circle is cut off on the smaller phones
             buttonY = (tabBar.frame.height / 1.5) * -1
         }
 
@@ -52,19 +51,19 @@ class CustomTabBarViewController: UITabBarController {
         let imageInsets = buttonWidth / 3.5
         
         button.imageEdgeInsets = UIEdgeInsets(top: imageInsets, left: imageInsets, bottom: imageInsets, right: imageInsets)
+        
+        button.addTarget(self, action: #selector(circleButtonTapped), for: .touchUpInside)
+        
         tabBar.addSubview(button)
+        
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func circleButtonTapped() {
+        
+        print("Tapped")
+        performSegue(withIdentifier: "add", sender: self)
+        
+        
     }
-    */
-
- 
 }
 
