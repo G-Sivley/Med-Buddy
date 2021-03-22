@@ -12,7 +12,10 @@ extension UIViewController {
         if #available(iOS 13.0, *) {
             let navBarAppearance = UINavigationBarAppearance()
             navBarAppearance.configureWithOpaqueBackground()
-            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: largeTitleColor]
+            
+            // change the large title so that the kerning is smaller and the font is different
+            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: largeTitleColor, .font: UIFont(name: "Quicksand Bold", size: 48)!, .kern: -4]
+          
             navBarAppearance.titleTextAttributes = [.foregroundColor: largeTitleColor]
             navBarAppearance.backgroundColor = backgoundColor
             
@@ -32,4 +35,5 @@ extension UIViewController {
             navigationController?.navigationBar.isTranslucent = false
             navigationItem.title = title
         }
-    }}
+    }
+}

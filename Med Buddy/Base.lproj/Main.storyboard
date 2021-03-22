@@ -138,8 +138,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p5s-aw-bcH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Schedule" image="calendar" catalog="system" selectedImage="calendar" id="8g0-nj-otr"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="jK4-Ag-8Bx">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jK4-Ag-8Bx">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="DrugWhite"/>
                         <color key="barTintColor" name="DrugDarkBlue"/>
