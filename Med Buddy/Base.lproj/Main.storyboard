@@ -32,7 +32,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fht-Ek-Jh4"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="DrugBackgroundGrey"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Med List" image="pills.fill" catalog="system" selectedImage="pills.fill" id="Toc-dU-ngs"/>
                 </viewController>
@@ -55,7 +55,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qhv-lG-adE"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="DrugBackgroundGrey"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Schedule" image="calendar" catalog="system" selectedImage="calendar" id="8g0-nj-otr"/>
                 </viewController>
@@ -94,7 +94,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="o5G-gq-J7E"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="DrugBackgroundGrey"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="ceT-di-mg8"/>
                 </viewController>
@@ -102,7 +102,7 @@
             </objects>
             <point key="canvasLocation" x="-758" y="802"/>
         </scene>
-        <!--Item-->
+        <!--Symptoms-->
         <scene sceneID="frG-3J-E2y">
             <objects>
                 <viewController id="CA9-AL-7nM" sceneMemberID="viewController">
@@ -110,15 +110,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Cil-bc-kaf"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="DrugBackgroundGrey"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="n13-NC-Iyy"/>
+                    <tabBarItem key="tabBarItem" title="Symptoms" image="bandage" catalog="system" id="n13-NC-Iyy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AaV-j1-IYw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-759" y="1426"/>
         </scene>
-        <!--Item-->
+        <!--More-->
         <scene sceneID="Quv-Ge-mGc">
             <objects>
                 <viewController id="vyb-rz-vwE" sceneMemberID="viewController">
@@ -126,9 +126,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="W3u-At-4aU"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="DrugBackgroundGrey"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="81h-51-Vcs"/>
+                    <tabBarItem key="tabBarItem" title="More" image="ellipsis.circle" catalog="system" id="81h-51-Vcs"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2zS-qg-FiO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -136,17 +136,19 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bandage" catalog="system" width="128" height="122"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="ellipsis.circle" catalog="system" width="128" height="121"/>
         <image name="pills.fill" catalog="system" width="128" height="106"/>
+        <namedColor name="DrugBackgroundGrey">
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="DrugDarkBlue">
             <color red="0.125" green="0.27799999713897705" blue="0.3059999942779541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="DrugGreen">
             <color red="0.36100000143051147" green="0.59600001573562622" blue="0.49399998784065247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -23,7 +23,6 @@
 		90EA099B26072BDD00CABE30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90EA099A26072BDD00CABE30 /* Assets.xcassets */; };
 		90EA099E26072BDD00CABE30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90EA099C26072BDD00CABE30 /* LaunchScreen.storyboard */; };
 		90F102592607E65200CF50BE /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F102582607E65200CF50BE /* CustomTabBarViewController.swift */; };
-		90F1025C2607EBE600CF50BE /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F1025B2607EBE600CF50BE /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +44,6 @@
 		90EA099D26072BDD00CABE30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		90EA099F26072BDD00CABE30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90F102582607E65200CF50BE /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
-		90F1025B2607EBE600CF50BE /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +88,6 @@
 				90EA099126072BD900CABE30 /* AppDelegate.swift */,
 				90EA099326072BD900CABE30 /* SceneDelegate.swift */,
 				90F102582607E65200CF50BE /* CustomTabBarViewController.swift */,
-				90F1025B2607EBE600CF50BE /* TabBarViewController.swift */,
 				904E46A62607C32700E79643 /* Views */,
 				90EA099726072BD900CABE30 /* Main.storyboard */,
 				90EA099A26072BDD00CABE30 /* Assets.xcassets */,
@@ -198,7 +195,6 @@
 				90F102592607E65200CF50BE /* CustomTabBarViewController.swift in Sources */,
 				90EA099426072BD900CABE30 /* SceneDelegate.swift in Sources */,
 				904E46A42607C2E500E79643 /* MedListViewController.swift in Sources */,
-				90F1025C2607EBE600CF50BE /* TabBarViewController.swift in Sources */,
 				904E46A12607C24300E79643 /* ScheduleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
