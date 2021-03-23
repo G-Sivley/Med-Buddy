@@ -19,6 +19,8 @@ class ScheduleViewController: UIViewController {
             
             // Add Rounded corners
             
+            
+            addRoundedCorner(OnNavigationBar: navigationBar, cornerRadius: 50)
             // Add Shadows
             
     
@@ -64,13 +66,36 @@ class ScheduleViewController: UIViewController {
 //    }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+    func addRoundedCorner(OnNavigationBar navigationBar: UINavigationBar, cornerRadius: CGFloat){
+        navigationBar.isTranslucent = false
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationBar.backgroundColor = .white
+        
+        // just hacked to make look good. Make sure it works on all views
+        let customView = UIView(frame: CGRect(x: 0, y: navigationBar.bounds.maxY - cornerRadius, width: navigationBar.bounds.width, height: cornerRadius * 2))
+        customView.backgroundColor = .clear
+        navigationBar.insertSubview(customView, at: 0)
+        
+        
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = UIBezierPath(roundedRect: customView.bounds, byRoundingCorners: [.bottomLeft,.bottomRight], cornerRadii: CGSize(width: cornerRadius, height: cornerRadius)).cgPath
+        
+        
+        shapeLayer.shadowColor = UIColor.lightGray.cgColor
+        shapeLayer.shadowOffset = CGSize(width: -6, height: 6)
+        shapeLayer.shadowOpacity = 0.8
+        shapeLayer.shadowRadius = 2
+        shapeLayer.fillColor = UIColor.white.cgColor
+        customView.layer.insertSublayer(shapeLayer, at: 0)
     }
-    */
-
+    
 }
