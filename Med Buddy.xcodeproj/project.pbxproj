@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		900B733B260AF8B5003A1703 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9041BE44260AF46700DE5544 /* DateCell.swift */; };
 		90233F192608F3780033221A /* NavBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90233F182608F3780033221A /* NavBarExtension.swift */; };
 		904E46A12607C24300E79643 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E46A02607C24300E79643 /* ScheduleViewController.swift */; };
 		904E46A42607C2E500E79643 /* MedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E46A32607C2E500E79643 /* MedListViewController.swift */; };
@@ -34,6 +35,7 @@
 		162B1F80B7EB27C64CE92091 /* Pods-Med Buddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Med Buddy.debug.xcconfig"; path = "Target Support Files/Pods-Med Buddy/Pods-Med Buddy.debug.xcconfig"; sourceTree = "<group>"; };
 		241DB120F9938056B24F3B7F /* Pods-Med Buddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Med Buddy.release.xcconfig"; path = "Target Support Files/Pods-Med Buddy/Pods-Med Buddy.release.xcconfig"; sourceTree = "<group>"; };
 		90233F182608F3780033221A /* NavBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarExtension.swift; sourceTree = "<group>"; };
+		9041BE44260AF46700DE5544 /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
 		904E46A02607C24300E79643 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		904E46A32607C2E500E79643 /* MedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedListViewController.swift; sourceTree = "<group>"; };
 		90B383BE260731D3003EF110 /* Quicksand BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand BoldItalic.otf"; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			children = (
 				90EA099126072BD900CABE30 /* AppDelegate.swift */,
 				90EA099326072BD900CABE30 /* SceneDelegate.swift */,
+				9041BE44260AF46700DE5544 /* DateCell.swift */,
 				90F102582607E65200CF50BE /* CustomTabBarViewController.swift */,
 				904E46A62607C32700E79643 /* Views */,
 				90EA099726072BD900CABE30 /* Main.storyboard */,
@@ -279,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90B8159B26085A2C008E52F4 /* MoreViewController.swift in Sources */,
+				900B733B260AF8B5003A1703 /* DateCell.swift in Sources */,
 				90EA099226072BD900CABE30 /* AppDelegate.swift in Sources */,
 				90D3AA6E2607ED8300894F33 /* Constants.swift in Sources */,
 				90B8159826085A08008E52F4 /* SymptomsViewController.swift in Sources */,

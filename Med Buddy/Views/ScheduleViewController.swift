@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import JTAppleCalendar
 
 class ScheduleViewController: UIViewController {
     
@@ -13,57 +14,32 @@ class ScheduleViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view
+        
+        
+        setupNavBar()
+        
+        
+    }
+    
+
+    
+    
+    //MARK: - Navigation Bar Setup
+    func setupNavBar() {
         configureNavigationBar(largeTitleColor: UIColor(named: K.colors.drugDarkBlue)!, backgoundColor: UIColor.white, tintColor: UIColor(named: K.colors.drugDarkBlue)!, title: "Schedule", preferredLargeTitle: true)
         
         if let navigationBar = self.navigationController?.navigationBar {
             
             // Add Rounded corners
             
-            
-            addRoundedCorner(OnNavigationBar: navigationBar, cornerRadius: 50)
-            // Add Shadows
-            
-    
-            
+            addRoundedCorner(OnNavigationBar: navigationBar, cornerRadius: 25)
             
             // Time Label
             
-            let view = UILabel()
-
-            view.frame = CGRect(x: 0, y: 0, width: 130, height: 43)
-
-            view.backgroundColor = .clear
-
-            view.textColor = UIColor(named: K.colors.drugDarkBlue)
-
-            view.font = UIFont(name: "Quicksand-Regular", size: 36)
-
-
-            // Line height: 45 pt
-
-
-            view.attributedText = NSMutableAttributedString(string: "3:22 PM", attributes: [NSAttributedString.Key.kern: -1.8])
-
-            navigationBar.addSubview(view)
-
-            view.translatesAutoresizingMaskIntoConstraints = false
-
-            //view.widthAnchor.constraint(equalToConstant: 130).isActive = true
-
-            view.heightAnchor.constraint(equalToConstant: 43).isActive = true
-
-            view.trailingAnchor.constraint(equalTo: navigationBar.trailingAnchor, constant: -15).isActive = true
-        
-
-            view.topAnchor.constraint(equalTo: navigationBar.topAnchor, constant: 55).isActive = true
+            addTimeLabel(toNavBar: navigationBar, time: "3:22 PM")
         }
         
-        
     }
- 
-//    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-//
-//    }
     
     /*
      // MARK: - Navigation
@@ -74,28 +50,30 @@ class ScheduleViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
-    
-    func addRoundedCorner(OnNavigationBar navigationBar: UINavigationBar, cornerRadius: CGFloat){
-        navigationBar.isTranslucent = false
-        navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationBar.backgroundColor = .white
-        
-        // just hacked to make look good. Make sure it works on all views
-        let customView = UIView(frame: CGRect(x: 0, y: navigationBar.bounds.maxY - cornerRadius, width: navigationBar.bounds.width, height: cornerRadius * 2))
-        customView.backgroundColor = .clear
-        navigationBar.insertSubview(customView, at: 0)
-        
-        
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = UIBezierPath(roundedRect: customView.bounds, byRoundingCorners: [.bottomLeft,.bottomRight], cornerRadii: CGSize(width: cornerRadius, height: cornerRadius)).cgPath
-        
-        
-        shapeLayer.shadowColor = UIColor.lightGray.cgColor
-        shapeLayer.shadowOffset = CGSize(width: -6, height: 6)
-        shapeLayer.shadowOpacity = 0.8
-        shapeLayer.shadowRadius = 2
-        shapeLayer.fillColor = UIColor.white.cgColor
-        customView.layer.insertSublayer(shapeLayer, at: 0)
+}
+
+extension ScheduleViewController: JTACMonthViewDataSource {
+    func configureCalendar(_ calendar: JTACMonthView) -> ConfigurationParameters {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy MM dd"
+        let startDate = formatter.date(from: "2018 01 01")!
+        let endDate = Date()
+        return ConfigurationParameters(startDate: startDate, endDate: endDate)
     }
+}
+
+extension ScheduleViewController: JTACMonthViewDelegate {
+    
+    
+    func calendar(_ calendar: JTACMonthView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTACDayCell {
+        let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "dateCell", for: indexPath) as! DateCell
+        cell.dateLabel.text = cellState.text
+        return cell
+    }
+    func calendar(_ calendar: JTACMonthView, willDisplay cell: JTACDayCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
+        let cell = cell as! DateCell
+        cell.dateLabel.text = cellState.text
+    }
+    
     
 }
