@@ -6,6 +6,6 @@ target 'Med Buddy' do
   use_frameworks!
 
   # Pods for Med Buddy
-pod 'JTAppleCalendar'
+
 
 end
