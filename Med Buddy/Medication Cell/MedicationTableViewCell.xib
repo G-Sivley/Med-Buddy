@@ -10,44 +10,99 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="206" id="KGk-i7-Jjw" customClass="MedicationTableViewCell" customModule="Med_Buddy" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="599" height="206"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="medicationCell" rowHeight="157" id="KGk-i7-Jjw" customClass="MedicationTableViewCell" customModule="Med_Buddy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="599" height="157"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="599" height="206"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="599" height="157"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ae1-pS-zhV">
-                        <rect key="frame" x="15" y="12" width="569" height="182"/>
+                        <rect key="frame" x="16" y="12" width="567" height="122"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="axp-yx-bl7">
-                                <rect key="frame" x="15" y="60" width="62" height="62"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="62" id="5A8-Iq-hNP"/>
-                                    <constraint firstAttribute="width" constant="62" id="7kn-zH-qNE"/>
-                                </constraints>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hsy-v2-i3e">
+                                <rect key="frame" x="15" y="30" width="211" height="62"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pills.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="axp-yx-bl7">
+                                        <rect key="frame" x="0.0" y="0.0" width="62" height="61.5"/>
+                                        <color key="tintColor" name="DrugGreen"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="62" id="5A8-Iq-hNP"/>
+                                            <constraint firstAttribute="width" constant="62" id="7kn-zH-qNE"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="J1t-Kd-Oj7">
+                                        <rect key="frame" x="72" y="0.0" width="139" height="62"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKH-cR-30O">
+                                                <rect key="frame" x="0.0" y="0.0" width="139" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="hOp-Ad-hbz"/>
+                                                </constraints>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Fluoxetine">
+                                                        <attributes>
+                                                            <font key="NSFont" size="18" name="Quicksand-Bold"/>
+                                                            <font key="NSOriginalFont" size="18" name="Quicksand-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content=" 20 mg">
+                                                        <attributes>
+                                                            <font key="NSFont" size="18" name="Quicksand-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqg-KD-TPH">
+                                                <rect key="frame" x="0.0" y="25" width="134" height="37"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Take 1 capsule by mouth">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="12" name="Quicksand-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" name="DrugWhite"/>
                         <constraints>
-                            <constraint firstItem="axp-yx-bl7" firstAttribute="leading" secondItem="ae1-pS-zhV" secondAttribute="leading" constant="15" id="AHw-Ai-3uc"/>
-                            <constraint firstItem="axp-yx-bl7" firstAttribute="centerY" secondItem="ae1-pS-zhV" secondAttribute="centerY" id="gg5-xP-6em"/>
+                            <constraint firstItem="hsy-v2-i3e" firstAttribute="leading" secondItem="ae1-pS-zhV" secondAttribute="leading" constant="15" id="0gW-f6-ARL"/>
+                            <constraint firstAttribute="height" constant="122" id="J3l-9i-idN"/>
+                            <constraint firstItem="hsy-v2-i3e" firstAttribute="centerY" secondItem="ae1-pS-zhV" secondAttribute="centerY" id="tca-uK-xJD"/>
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" name="DrugWhite"/>
+                <color key="backgroundColor" name="DrugBackgroundGrey"/>
                 <constraints>
                     <constraint firstItem="ae1-pS-zhV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="B3z-iQ-F56"/>
-                    <constraint firstAttribute="trailing" secondItem="ae1-pS-zhV" secondAttribute="trailing" constant="15" id="DqI-eS-bQu"/>
-                    <constraint firstItem="ae1-pS-zhV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="EUS-oL-Wr0"/>
+                    <constraint firstAttribute="trailing" secondItem="ae1-pS-zhV" secondAttribute="trailing" constant="16" id="DqI-eS-bQu"/>
+                    <constraint firstItem="ae1-pS-zhV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="EUS-oL-Wr0"/>
                     <constraint firstAttribute="bottom" secondItem="ae1-pS-zhV" secondAttribute="bottom" constant="12" id="O7q-l1-Pqk"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="221.01449275362322" y="143.97321428571428"/>
+            <connections>
+                <outlet property="medicationNameLabel" destination="fKH-cR-30O" id="dQQ-x7-1rY"/>
+            </connections>
+            <point key="canvasLocation" x="221.01449275362322" y="160.37946428571428"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="pills.fill" catalog="system" width="128" height="106"/>
+        <namedColor name="DrugBackgroundGrey">
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DrugGreen">
+            <color red="0.36100000143051147" green="0.59600001573562622" blue="0.49399998784065247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="DrugWhite">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

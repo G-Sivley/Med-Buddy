@@ -7,11 +7,14 @@
 
 import UIKit
 
-class ScheduleViewController: UIViewController {
+class ScheduleViewController: UIViewController, UITableViewDelegate {
+    
+    
     
     @IBOutlet weak var medicationTableView: UITableView!
     
     let medicationsArray = ["Fluoxetine", "Prasugrel", "Ibuprofen"]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,14 +23,19 @@ class ScheduleViewController: UIViewController {
         
         
         // Register and setup medication table
-        medicationTableView.register(UINib(nibName: K.medicationNib, bundle: nil), forCellReuseIdentifier: K.medicationNib)
-        medicationTableView.dataSource = self
+        let nib = UINib.init(nibName: K.medicationNib, bundle: nil)
+        self.medicationTableView.register(nib, forCellReuseIdentifier: K.medicationReusableCell)
+        
+        
+       
         
         // Setup NavBar
         setupNavBar()
         
         
     }
+    
+    
     
 
     
@@ -73,12 +81,8 @@ extension ScheduleViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = medicationTableView.dequeueReusableCell(withIdentifier: K.medicationNib, for: indexPath) as! MedicationTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.medicationReusableCell, for: indexPath) as! MedicationTableViewCell
         
-        cell.textLabel?.text = medicationsArray[indexPath.row]
-    
         return cell
     }
-    
-    
 }

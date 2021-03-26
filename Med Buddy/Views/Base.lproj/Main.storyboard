@@ -37,9 +37,14 @@
                                 <rect key="frame" x="30" y="118" width="354" height="327"/>
                                 <color key="tintColor" name="DrugGreen"/>
                             </datePicker>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gmr-6D-Ypx">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gmr-6D-Ypx">
                                 <rect key="frame" x="0.0" y="455" width="414" height="358"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="DrugBackgroundGrey"/>
+                                <color key="sectionIndexBackgroundColor" name="DrugBackgroundGrey"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="fTn-ho-SLV" id="yt1-DO-lhW"/>
+                                    <outlet property="delegate" destination="fTn-ho-SLV" id="PN4-JM-4QQ"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qhv-lG-adE"/>
@@ -61,7 +66,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="medicationTableView" destination="Gmr-6D-Ypx" id="co7-1S-DeV"/>
+                        <outlet property="medicationTableView" destination="Gmr-6D-Ypx" id="eiM-7Q-DPv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qT9-MP-Dkw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
