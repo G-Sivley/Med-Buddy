@@ -32,14 +32,37 @@
                     <view key="view" contentMode="scaleToFill" id="KHn-cl-JKf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="aP6-9w-kSE">
+                                <rect key="frame" x="30" y="118" width="354" height="327"/>
+                                <color key="tintColor" name="DrugGreen"/>
+                            </datePicker>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gmr-6D-Ypx">
+                                <rect key="frame" x="0.0" y="455" width="414" height="358"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Qhv-lG-adE"/>
                         <color key="backgroundColor" name="DrugBackgroundGrey"/>
+                        <constraints>
+                            <constraint firstItem="aP6-9w-kSE" firstAttribute="centerX" secondItem="KHn-cl-JKf" secondAttribute="centerX" id="JYh-Uk-THn"/>
+                            <constraint firstItem="Gmr-6D-Ypx" firstAttribute="leading" secondItem="Qhv-lG-adE" secondAttribute="leading" id="NXi-en-Tmw"/>
+                            <constraint firstItem="Qhv-lG-adE" firstAttribute="trailing" secondItem="aP6-9w-kSE" secondAttribute="trailing" constant="30" id="OpS-7I-r3y"/>
+                            <constraint firstItem="aP6-9w-kSE" firstAttribute="top" secondItem="Qhv-lG-adE" secondAttribute="top" constant="30" id="Q6I-dG-Pec"/>
+                            <constraint firstItem="Qhv-lG-adE" firstAttribute="bottom" secondItem="Gmr-6D-Ypx" secondAttribute="bottom" id="Yyy-2J-ieW"/>
+                            <constraint firstItem="Gmr-6D-Ypx" firstAttribute="top" secondItem="aP6-9w-kSE" secondAttribute="bottom" constant="10" id="cCt-Nq-MUw"/>
+                            <constraint firstItem="Qhv-lG-adE" firstAttribute="trailing" secondItem="Gmr-6D-Ypx" secondAttribute="trailing" id="rGu-ZX-0cb"/>
+                            <constraint firstItem="aP6-9w-kSE" firstAttribute="leading" secondItem="Qhv-lG-adE" secondAttribute="leading" constant="30" id="xcv-71-rO2"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Schedule" id="vdL-fS-cug">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="ellipsis" catalog="system" id="zqh-Va-gjo">
                             <color key="tintColor" name="DrugDarkBlue"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="medicationTableView" destination="Gmr-6D-Ypx" id="co7-1S-DeV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qT9-MP-Dkw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

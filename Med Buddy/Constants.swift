@@ -9,6 +9,8 @@ import UIKit
 
 struct K {
     
+    static let medicationNib = "MedicationTableViewCell"
+    
     struct colors {
         static let drugBackgroundGrey = "DrugBackgroundGrey"
         static let drugDarkBlue = "DrugDarkBlue"
