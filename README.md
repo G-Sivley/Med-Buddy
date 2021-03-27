@@ -2,6 +2,14 @@
 A medication app that uses vision and firebase scanning functionality to provide medication information
 
 
+## Things I Learned:
+
+1. Custom tabbar and navigationView
+2. Calendar Picker Technology
+3. ...
+
+
+
 ## Technologies
 Firebase MLKit https://firebase.google.com/docs/ml-kit/ios/read-barcodes
 OpenFDA API https://open.fda.gov/apis/drug/ndc/ 
