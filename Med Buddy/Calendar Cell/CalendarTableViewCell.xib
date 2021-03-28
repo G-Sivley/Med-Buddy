@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="calenderCell" rowHeight="624" id="KGk-i7-Jjw" customClass="CalendarTableViewCell" customModule="Med_Buddy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="701" height="624"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="701" height="624"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="xcs-hQ-5bO">
+                        <rect key="frame" x="30" y="25" width="641" height="320"/>
+                        <color key="backgroundColor" name="DrugBackgroundGrey"/>
+                        <color key="tintColor" name="DrugGreen"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="320" id="hXe-Dc-Q5i"/>
+                        </constraints>
+                    </datePicker>
+                </subviews>
+                <color key="backgroundColor" name="DrugBackgroundGrey"/>
+                <constraints>
+                    <constraint firstItem="xcs-hQ-5bO" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="02p-hG-cbl"/>
+                    <constraint firstItem="xcs-hQ-5bO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="ESs-cu-UPF"/>
+                    <constraint firstItem="xcs-hQ-5bO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="THx-WH-JCf"/>
+                    <constraint firstAttribute="trailing" secondItem="xcs-hQ-5bO" secondAttribute="trailing" constant="30" id="k9B-U1-u4C"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" name="DrugBackgroundGrey"/>
+            <point key="canvasLocation" x="145.6521739130435" y="189.50892857142856"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="DrugBackgroundGrey">
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DrugGreen">
+            <color red="0.36100000143051147" green="0.59600001573562622" blue="0.49399998784065247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

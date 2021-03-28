@@ -9,9 +9,11 @@
 /* Begin PBXBuildFile section */
 		900B7349260D9392003A1703 /* MedicationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900B7347260D9392003A1703 /* MedicationTableViewCell.swift */; };
 		900B734A260D9392003A1703 /* MedicationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 900B7348260D9392003A1703 /* MedicationTableViewCell.xib */; };
+		900EE0492610179E0053D892 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0472610179E0053D892 /* CalendarTableViewCell.swift */; };
+		900EE04A2610179E0053D892 /* CalendarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 900EE0482610179E0053D892 /* CalendarTableViewCell.xib */; };
 		90233F192608F3780033221A /* NavBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90233F182608F3780033221A /* NavBarExtension.swift */; };
-		904E46A12607C24300E79643 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E46A02607C24300E79643 /* ScheduleViewController.swift */; };
 		904E46A42607C2E500E79643 /* MedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E46A32607C2E500E79643 /* MedListViewController.swift */; };
+		905BAF8C26101D2500EDF78B /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905BAF8B26101D2500EDF78B /* ScheduleTableViewController.swift */; };
 		90B383C5260731D4003EF110 /* Quicksand BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 90B383BE260731D3003EF110 /* Quicksand BoldItalic.otf */; };
 		90B383C6260731D4003EF110 /* Quicksand Dash.otf in Resources */ = {isa = PBXBuildFile; fileRef = 90B383BF260731D3003EF110 /* Quicksand Dash.otf */; };
 		90B383C7260731D4003EF110 /* Quicksand Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 90B383C0260731D3003EF110 /* Quicksand Bold.otf */; };
@@ -37,9 +39,11 @@
 		241DB120F9938056B24F3B7F /* Pods-Med Buddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Med Buddy.release.xcconfig"; path = "Target Support Files/Pods-Med Buddy/Pods-Med Buddy.release.xcconfig"; sourceTree = "<group>"; };
 		900B7347260D9392003A1703 /* MedicationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationTableViewCell.swift; sourceTree = "<group>"; };
 		900B7348260D9392003A1703 /* MedicationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicationTableViewCell.xib; sourceTree = "<group>"; };
+		900EE0472610179E0053D892 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
+		900EE0482610179E0053D892 /* CalendarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarTableViewCell.xib; sourceTree = "<group>"; };
 		90233F182608F3780033221A /* NavBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarExtension.swift; sourceTree = "<group>"; };
-		904E46A02607C24300E79643 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		904E46A32607C2E500E79643 /* MedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedListViewController.swift; sourceTree = "<group>"; };
+		905BAF8B26101D2500EDF78B /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 		90B383BE260731D3003EF110 /* Quicksand BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand BoldItalic.otf"; sourceTree = "<group>"; };
 		90B383BF260731D3003EF110 /* Quicksand Dash.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand Dash.otf"; sourceTree = "<group>"; };
 		90B383C0260731D3003EF110 /* Quicksand Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand Bold.otf"; sourceTree = "<group>"; };
@@ -114,6 +118,15 @@
 			path = "Medication Cell";
 			sourceTree = "<group>";
 		};
+		900EE04C261017C00053D892 /* Calendar Cell */ = {
+			isa = PBXGroup;
+			children = (
+				900EE0472610179E0053D892 /* CalendarTableViewCell.swift */,
+				900EE0482610179E0053D892 /* CalendarTableViewCell.xib */,
+			);
+			path = "Calendar Cell";
+			sourceTree = "<group>";
+		};
 		90233F1B2608F37E0033221A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,7 +138,7 @@
 		904E46A62607C32700E79643 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				904E46A02607C24300E79643 /* ScheduleViewController.swift */,
+				905BAF8B26101D2500EDF78B /* ScheduleTableViewController.swift */,
 				904E46A32607C2E500E79643 /* MedListViewController.swift */,
 				90B8159226084FA9008E52F4 /* AddViewController.swift */,
 				90B8159726085A08008E52F4 /* SymptomsViewController.swift */,
@@ -158,6 +171,7 @@
 			children = (
 				90EA099126072BD900CABE30 /* AppDelegate.swift */,
 				90EA099326072BD900CABE30 /* SceneDelegate.swift */,
+				900EE04C261017C00053D892 /* Calendar Cell */,
 				900B734C260D939A003A1703 /* Medication Cell */,
 				900B7346260D935E003A1703 /* Models */,
 				900B7345260D9352003A1703 /* Views */,
@@ -260,6 +274,7 @@
 				90B383C5260731D4003EF110 /* Quicksand BoldItalic.otf in Resources */,
 				90B383CB260731D4003EF110 /* Quicksand Italic.otf in Resources */,
 				90EA099B26072BDD00CABE30 /* Assets.xcassets in Resources */,
+				900EE04A2610179E0053D892 /* CalendarTableViewCell.xib in Resources */,
 				90B383C9260731D4003EF110 /* Quicksand Light.otf in Resources */,
 				90B383CA260731D4003EF110 /* Quicksand LightItalic.otf in Resources */,
 				90B383C8260731D4003EF110 /* Quicksand Regular.otf in Resources */,
@@ -307,9 +322,10 @@
 				90F102592607E65200CF50BE /* CustomTabBarViewController.swift in Sources */,
 				90EA099426072BD900CABE30 /* SceneDelegate.swift in Sources */,
 				904E46A42607C2E500E79643 /* MedListViewController.swift in Sources */,
-				904E46A12607C24300E79643 /* ScheduleViewController.swift in Sources */,
+				905BAF8C26101D2500EDF78B /* ScheduleTableViewController.swift in Sources */,
 				900B7349260D9392003A1703 /* MedicationTableViewCell.swift in Sources */,
 				90233F192608F3780033221A /* NavBarExtension.swift in Sources */,
+				900EE0492610179E0053D892 /* CalendarTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

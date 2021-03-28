@@ -25,53 +25,25 @@
             </objects>
             <point key="canvasLocation" x="-759.4202898550725" y="156.69642857142856"/>
         </scene>
-        <!--Schedule-->
-        <scene sceneID="cDg-hg-VuB">
+        <!--Schedule Table View Controller-->
+        <scene sceneID="JIC-qr-PDT">
             <objects>
-                <viewController id="fTn-ho-SLV" customClass="ScheduleViewController" customModule="Med_Buddy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KHn-cl-JKf">
+                <tableViewController id="PXY-k9-Nfm" customClass="ScheduleTableViewController" customModule="Med_Buddy" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="G5F-KS-3qI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="aP6-9w-kSE">
-                                <rect key="frame" x="30" y="118" width="354" height="327"/>
-                                <color key="tintColor" name="DrugGreen"/>
-                            </datePicker>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gmr-6D-Ypx">
-                                <rect key="frame" x="0.0" y="455" width="414" height="358"/>
-                                <color key="backgroundColor" name="DrugBackgroundGrey"/>
-                                <color key="sectionIndexBackgroundColor" name="DrugBackgroundGrey"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="fTn-ho-SLV" id="yt1-DO-lhW"/>
-                                    <outlet property="delegate" destination="fTn-ho-SLV" id="PN4-JM-4QQ"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Qhv-lG-adE"/>
-                        <color key="backgroundColor" name="DrugBackgroundGrey"/>
-                        <constraints>
-                            <constraint firstItem="aP6-9w-kSE" firstAttribute="centerX" secondItem="KHn-cl-JKf" secondAttribute="centerX" id="JYh-Uk-THn"/>
-                            <constraint firstItem="Gmr-6D-Ypx" firstAttribute="leading" secondItem="Qhv-lG-adE" secondAttribute="leading" id="NXi-en-Tmw"/>
-                            <constraint firstItem="Qhv-lG-adE" firstAttribute="trailing" secondItem="aP6-9w-kSE" secondAttribute="trailing" constant="30" id="OpS-7I-r3y"/>
-                            <constraint firstItem="aP6-9w-kSE" firstAttribute="top" secondItem="Qhv-lG-adE" secondAttribute="top" constant="30" id="Q6I-dG-Pec"/>
-                            <constraint firstItem="Qhv-lG-adE" firstAttribute="bottom" secondItem="Gmr-6D-Ypx" secondAttribute="bottom" id="Yyy-2J-ieW"/>
-                            <constraint firstItem="Gmr-6D-Ypx" firstAttribute="top" secondItem="aP6-9w-kSE" secondAttribute="bottom" constant="10" id="cCt-Nq-MUw"/>
-                            <constraint firstItem="Qhv-lG-adE" firstAttribute="trailing" secondItem="Gmr-6D-Ypx" secondAttribute="trailing" id="rGu-ZX-0cb"/>
-                            <constraint firstItem="aP6-9w-kSE" firstAttribute="leading" secondItem="Qhv-lG-adE" secondAttribute="leading" constant="30" id="xcv-71-rO2"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Schedule" id="vdL-fS-cug">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="ellipsis" catalog="system" id="zqh-Va-gjo">
-                            <color key="tintColor" name="DrugDarkBlue"/>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="medicationTableView" destination="Gmr-6D-Ypx" id="eiM-7Q-DPv"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qT9-MP-Dkw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="sectionIndexBackgroundColor" name="DrugBackgroundGrey"/>
+                        <connections>
+                            <outlet property="dataSource" destination="PXY-k9-Nfm" id="I3U-nR-6sE"/>
+                            <outlet property="delegate" destination="PXY-k9-Nfm" id="ciz-zQ-eN4"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="AMz-dw-Ejy"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3fk-wI-9mo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="152.17391304347828" y="-490.17857142857139"/>
+            <point key="canvasLocation" x="70" y="-490"/>
         </scene>
         <!--Custom Tab Bar View Controller-->
         <scene sceneID="ehB-ya-HDN">
@@ -180,7 +152,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="fTn-ho-SLV" kind="relationship" relationship="rootViewController" id="JO5-Ft-IuZ"/>
+                        <segue destination="PXY-k9-Nfm" kind="relationship" relationship="rootViewController" id="1HR-cI-L0Y"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TEu-K7-xKS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -191,7 +163,6 @@
     <resources>
         <image name="bandage" catalog="system" width="128" height="122"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
-        <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="ellipsis.circle" catalog="system" width="128" height="121"/>
         <image name="pills.fill" catalog="system" width="128" height="106"/>
         <namedColor name="DrugBackgroundGrey">
