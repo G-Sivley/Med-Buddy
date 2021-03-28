@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="timeOfDay" rowHeight="76" id="KGk-i7-Jjw" customClass="TimeOfDayCell" customModule="Med_Buddy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="362" height="76"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="362" height="76"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vaK-T0-tHA">
+                        <rect key="frame" x="16" y="0.0" width="321" height="42"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ng1-P5-cdI">
+                                <rect key="frame" x="0.0" y="0.0" width="133.5" height="42"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Morning">
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor"/>
+                                            <font key="NSFont" size="36" name="Quicksand-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfO-cG-dbb">
+                                <rect key="frame" x="299.5" y="0.0" width="21.5" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="tintColor" name="DrugDarkBlue"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="regular"/>
+                                </state>
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="1DQ-pe-wJD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="DrugBackgroundGrey"/>
+                        <constraints>
+                            <constraint firstItem="ng1-P5-cdI" firstAttribute="top" secondItem="vaK-T0-tHA" secondAttribute="top" id="0XC-jb-5nc"/>
+                            <constraint firstItem="ng1-P5-cdI" firstAttribute="leading" secondItem="vaK-T0-tHA" secondAttribute="leading" id="0fE-hZ-s0b"/>
+                            <constraint firstItem="kfO-cG-dbb" firstAttribute="top" secondItem="vaK-T0-tHA" secondAttribute="top" id="BxZ-6K-hmw"/>
+                            <constraint firstItem="kfO-cG-dbb" firstAttribute="centerY" secondItem="vaK-T0-tHA" secondAttribute="centerY" id="EhC-hP-UlC"/>
+                            <constraint firstAttribute="trailing" secondItem="kfO-cG-dbb" secondAttribute="trailing" id="HS7-ce-S2g"/>
+                            <constraint firstAttribute="height" constant="42" id="Pwl-m4-98P"/>
+                            <constraint firstAttribute="bottom" secondItem="kfO-cG-dbb" secondAttribute="bottom" id="RnP-SJ-wMu"/>
+                            <constraint firstAttribute="bottom" secondItem="ng1-P5-cdI" secondAttribute="bottom" id="pin-yb-Hk6"/>
+                            <constraint firstItem="ng1-P5-cdI" firstAttribute="leading" secondItem="vaK-T0-tHA" secondAttribute="leading" id="qjv-0L-ITl"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" name="DrugBackgroundGrey"/>
+                <constraints>
+                    <constraint firstItem="vaK-T0-tHA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="41M-2V-P0A"/>
+                    <constraint firstItem="vaK-T0-tHA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="6yX-Ig-1zg"/>
+                    <constraint firstAttribute="bottom" secondItem="vaK-T0-tHA" secondAttribute="bottom" id="PjF-n3-y1e"/>
+                    <constraint firstAttribute="trailing" secondItem="vaK-T0-tHA" secondAttribute="trailing" constant="25" id="swx-5m-t6v"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="timeLabel" destination="ng1-P5-cdI" id="sSf-ri-B9W"/>
+            </connections>
+            <point key="canvasLocation" x="163.768115942029" y="26.116071428571427"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <namedColor name="DrugBackgroundGrey">
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DrugDarkBlue">
+            <color red="0.125" green="0.27799999713897705" blue="0.3059999942779541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

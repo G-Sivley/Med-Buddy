@@ -26,6 +26,9 @@ class ScheduleTableViewController: UITableViewController {
         let calenderCellNib = UINib.init(nibName: "CalendarTableViewCell", bundle: nil)
         self.tableView.register(calenderCellNib, forCellReuseIdentifier: "calenderCell")
         
+        let timeOfDayCellNib = UINib.init(nibName: "TimeOfDayCell", bundle: nil)
+        self.tableView.register(timeOfDayCellNib, forCellReuseIdentifier: "timeOfDay")
+        
         // Setup NavBar
         setupNavBar()
     }
@@ -61,10 +64,19 @@ class ScheduleTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.medicationReusableCell, for: indexPath) as! MedicationTableViewCell
         
-        return cell
-    
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "timeOfDay", for: indexPath) as! TimeOfDayCell
+            return cell
+        
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: K.medicationReusableCell, for: indexPath) as! MedicationTableViewCell
+            return cell
+        
+        }
+        
+        
+       
     
 }
 
@@ -113,6 +125,7 @@ class ScheduleTableViewController: UITableViewController {
     }
     */
     
+    //MARK: - Scroll Methods
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard let height = navigationController?.navigationBar.frame.height else { return }
         timeLabel.moveAndResizeLabel(for: height)

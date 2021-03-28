@@ -15,6 +15,8 @@
 		904E46A42607C2E500E79643 /* MedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E46A32607C2E500E79643 /* MedListViewController.swift */; };
 		905BAF8C26101D2500EDF78B /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905BAF8B26101D2500EDF78B /* ScheduleTableViewController.swift */; };
 		907812F126112C2700EB59ED /* TimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907812F026112C2700EB59ED /* TimeLabel.swift */; };
+		907812F8261146B400EB59ED /* TimeOfDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907812F6261146B400EB59ED /* TimeOfDayCell.swift */; };
+		907812F9261146B400EB59ED /* TimeOfDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 907812F7261146B400EB59ED /* TimeOfDayCell.xib */; };
 		90B383C5260731D4003EF110 /* Quicksand BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 90B383BE260731D3003EF110 /* Quicksand BoldItalic.otf */; };
 		90B383C6260731D4003EF110 /* Quicksand Dash.otf in Resources */ = {isa = PBXBuildFile; fileRef = 90B383BF260731D3003EF110 /* Quicksand Dash.otf */; };
 		90B383C7260731D4003EF110 /* Quicksand Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 90B383C0260731D3003EF110 /* Quicksand Bold.otf */; };
@@ -46,6 +48,8 @@
 		904E46A32607C2E500E79643 /* MedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedListViewController.swift; sourceTree = "<group>"; };
 		905BAF8B26101D2500EDF78B /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 		907812F026112C2700EB59ED /* TimeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLabel.swift; sourceTree = "<group>"; };
+		907812F6261146B400EB59ED /* TimeOfDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeOfDayCell.swift; sourceTree = "<group>"; };
+		907812F7261146B400EB59ED /* TimeOfDayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeOfDayCell.xib; sourceTree = "<group>"; };
 		90B383BE260731D3003EF110 /* Quicksand BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand BoldItalic.otf"; sourceTree = "<group>"; };
 		90B383BF260731D3003EF110 /* Quicksand Dash.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand Dash.otf"; sourceTree = "<group>"; };
 		90B383C0260731D3003EF110 /* Quicksand Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand Bold.otf"; sourceTree = "<group>"; };
@@ -150,6 +154,25 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		907812F32611463E00EB59ED /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				900EE04C261017C00053D892 /* Calendar Cell */,
+				900B734C260D939A003A1703 /* Medication Cell */,
+				907812FB261146BA00EB59ED /* TimeOfDay Cell */,
+			);
+			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		907812FB261146BA00EB59ED /* TimeOfDay Cell */ = {
+			isa = PBXGroup;
+			children = (
+				907812F6261146B400EB59ED /* TimeOfDayCell.swift */,
+				907812F7261146B400EB59ED /* TimeOfDayCell.xib */,
+			);
+			path = "TimeOfDay Cell";
+			sourceTree = "<group>";
+		};
 		90EA098526072BD900CABE30 = {
 			isa = PBXGroup;
 			children = (
@@ -174,8 +197,7 @@
 				90EA099126072BD900CABE30 /* AppDelegate.swift */,
 				90EA099326072BD900CABE30 /* SceneDelegate.swift */,
 				900B7344260D932D003A1703 /* TabBar Controller */,
-				900EE04C261017C00053D892 /* Calendar Cell */,
-				900B734C260D939A003A1703 /* Medication Cell */,
+				907812F32611463E00EB59ED /* Custom Cells */,
 				900B7346260D935E003A1703 /* Models */,
 				900B7345260D9352003A1703 /* Views */,
 				904E46A62607C32700E79643 /* Controllers */,
@@ -276,6 +298,7 @@
 				90EA099E26072BDD00CABE30 /* LaunchScreen.storyboard in Resources */,
 				90B383C5260731D4003EF110 /* Quicksand BoldItalic.otf in Resources */,
 				90B383CB260731D4003EF110 /* Quicksand Italic.otf in Resources */,
+				907812F9261146B400EB59ED /* TimeOfDayCell.xib in Resources */,
 				90EA099B26072BDD00CABE30 /* Assets.xcassets in Resources */,
 				900EE04A2610179E0053D892 /* CalendarTableViewCell.xib in Resources */,
 				90B383C9260731D4003EF110 /* Quicksand Light.otf in Resources */,
@@ -321,6 +344,7 @@
 				90B8159B26085A2C008E52F4 /* MoreViewController.swift in Sources */,
 				90EA099226072BD900CABE30 /* AppDelegate.swift in Sources */,
 				90D3AA6E2607ED8300894F33 /* Constants.swift in Sources */,
+				907812F8261146B400EB59ED /* TimeOfDayCell.swift in Sources */,
 				90B8159826085A08008E52F4 /* SymptomsViewController.swift in Sources */,
 				90B8159326084FA9008E52F4 /* AddViewController.swift in Sources */,
 				90F102592607E65200CF50BE /* CustomTabBarViewController.swift in Sources */,
