@@ -14,6 +14,7 @@
 		90233F192608F3780033221A /* NavBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90233F182608F3780033221A /* NavBarExtension.swift */; };
 		904E46A42607C2E500E79643 /* MedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E46A32607C2E500E79643 /* MedListViewController.swift */; };
 		905BAF8C26101D2500EDF78B /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905BAF8B26101D2500EDF78B /* ScheduleTableViewController.swift */; };
+		907812F126112C2700EB59ED /* TimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907812F026112C2700EB59ED /* TimeLabel.swift */; };
 		90B383C5260731D4003EF110 /* Quicksand BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 90B383BE260731D3003EF110 /* Quicksand BoldItalic.otf */; };
 		90B383C6260731D4003EF110 /* Quicksand Dash.otf in Resources */ = {isa = PBXBuildFile; fileRef = 90B383BF260731D3003EF110 /* Quicksand Dash.otf */; };
 		90B383C7260731D4003EF110 /* Quicksand Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 90B383C0260731D3003EF110 /* Quicksand Bold.otf */; };
@@ -44,6 +45,7 @@
 		90233F182608F3780033221A /* NavBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarExtension.swift; sourceTree = "<group>"; };
 		904E46A32607C2E500E79643 /* MedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedListViewController.swift; sourceTree = "<group>"; };
 		905BAF8B26101D2500EDF78B /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
+		907812F026112C2700EB59ED /* TimeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLabel.swift; sourceTree = "<group>"; };
 		90B383BE260731D3003EF110 /* Quicksand BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand BoldItalic.otf"; sourceTree = "<group>"; };
 		90B383BF260731D3003EF110 /* Quicksand Dash.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand Dash.otf"; sourceTree = "<group>"; };
 		90B383C0260731D3003EF110 /* Quicksand Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand Bold.otf"; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				90EA099726072BD900CABE30 /* Main.storyboard */,
+				907812F026112C2700EB59ED /* TimeLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				907812F126112C2700EB59ED /* TimeLabel.swift in Sources */,
 				90B8159B26085A2C008E52F4 /* MoreViewController.swift in Sources */,
 				90EA099226072BD900CABE30 /* AppDelegate.swift in Sources */,
 				90D3AA6E2607ED8300894F33 /* Constants.swift in Sources */,
