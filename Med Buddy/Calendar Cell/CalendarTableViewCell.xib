@@ -24,6 +24,9 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="320" id="hXe-Dc-Q5i"/>
                         </constraints>
+                        <date key="minimumDate" timeIntervalSinceReferenceDate="631191600">
+                            <!--2021-01-01 11:00:00 +0000-->
+                        </date>
                     </datePicker>
                 </subviews>
                 <color key="backgroundColor" name="DrugBackgroundGrey"/>

@@ -143,7 +143,6 @@
 				90B8159226084FA9008E52F4 /* AddViewController.swift */,
 				90B8159726085A08008E52F4 /* SymptomsViewController.swift */,
 				90B8159A26085A2C008E52F4 /* MoreViewController.swift */,
-				900B7344260D932D003A1703 /* TabBar Controller */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -171,6 +170,7 @@
 			children = (
 				90EA099126072BD900CABE30 /* AppDelegate.swift */,
 				90EA099326072BD900CABE30 /* SceneDelegate.swift */,
+				900B7344260D932D003A1703 /* TabBar Controller */,
 				900EE04C261017C00053D892 /* Calendar Cell */,
 				900B734C260D939A003A1703 /* Medication Cell */,
 				900B7346260D935E003A1703 /* Models */,
