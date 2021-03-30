@@ -1,29 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t2k-We-U2E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VY6-Tf-Rne">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Add View Controller-->
+        <!--Add Medication-->
         <scene sceneID="F4j-aa-UbL">
             <objects>
                 <viewController id="t2k-We-U2E" customClass="AddViewController" customModule="Med_Buddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YM2-DS-lAS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Medication Name" translatesAutoresizingMaskIntoConstraints="NO" id="ldf-bZ-igS">
+                                <rect key="frame" x="0.0" y="140" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                            </searchBar>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lRk-nY-sUk">
+                                <rect key="frame" x="38" y="267" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </navigationBar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="5LJ-tG-AjJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add Medication" id="iFc-jl-Gjb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="aca-n0-2KQ">
+                            <color key="tintColor" name="DrugDarkBlue"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="unI-Wi-wcV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="70" y="802"/>
+            <point key="canvasLocation" x="979.71014492753636" y="801.5625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Xj9-R4-4Ed">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VY6-Tf-Rne" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="cng-b3-pxr">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="DrugDarkBlue"/>
+                        <color key="barTintColor" name="DrugDarkBlue"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" name="DrugDarkBlue"/>
+                            <color key="textShadowColor" name="DrugDarkBlue"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="t2k-We-U2E" kind="relationship" relationship="rootViewController" id="ASu-36-zSF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jCr-Tc-aTq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="69.565217391304358" y="801.5625"/>
         </scene>
     </scenes>
     <resources>
+        <namedColor name="DrugDarkBlue">
+            <color red="0.125" green="0.27799999713897705" blue="0.3059999942779541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
