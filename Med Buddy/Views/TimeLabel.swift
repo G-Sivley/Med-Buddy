@@ -35,7 +35,7 @@ class TimeLabel: UILabel {
         
         backgroundColor = .clear
         
-        textColor = UIColor(named: K.colors.drugDarkBlue)
+        textColor = UIColor(named: K.Colors.drugDarkBlue)
         
         font = UIFont(name: "Quicksand-Regular", size: Const.NavBarFontLargeState)
         attributedText = NSMutableAttributedString(string: "3:33 PM", attributes: [NSAttributedString.Key.kern: -1.8])

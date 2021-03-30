@@ -20,14 +20,7 @@ class ScheduleTableViewController: UITableViewController {
         
         
         // Register and setup medication table
-        let medicationCellNib = UINib.init(nibName: K.medicationNib, bundle: nil)
-        self.tableView.register(medicationCellNib, forCellReuseIdentifier: K.medicationReusableCell)
-        
-        let calenderCellNib = UINib.init(nibName: "CalendarTableViewCell", bundle: nil)
-        self.tableView.register(calenderCellNib, forCellReuseIdentifier: "calenderCell")
-        
-        let timeOfDayCellNib = UINib.init(nibName: "TimeOfDayCell", bundle: nil)
-        self.tableView.register(timeOfDayCellNib, forCellReuseIdentifier: "timeOfDay")
+        registerNibs()
         
         // Setup NavBar
         setupNavBar()
@@ -35,11 +28,11 @@ class ScheduleTableViewController: UITableViewController {
     
     //MARK: - Navigation Bar Setup
     func setupNavBar() {
-        configureNavigationBar(largeTitleColor: UIColor(named: K.colors.drugDarkBlue)!, backgoundColor: UIColor.white, tintColor: UIColor(named: K.colors.drugDarkBlue)!, title: "Schedule", preferredLargeTitle: true)
+        configureNavigationBar(largeTitleColor: UIColor(named: K.Colors.drugDarkBlue)!, backgoundColor: UIColor.white, tintColor: UIColor(named: K.Colors.drugDarkBlue)!, title: "Schedule", preferredLargeTitle: true)
     
         if let navigationBar = self.navigationController?.navigationBar {
             timeLabel.setupTimeLabel(on: navigationBar)
-            addNavBarShadow()
+            addShadow(view: navigationBar)
         }
     }
     
@@ -49,7 +42,7 @@ class ScheduleTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     
-        let cell = tableView.dequeueReusableCell(withIdentifier: "calenderCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.Nibs.calendarReusableCell)
         
         
         return cell
@@ -66,19 +59,26 @@ class ScheduleTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "timeOfDay", for: indexPath) as! TimeOfDayCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: K.Nibs.timeOfDayReusableCell, for: indexPath) as! TimeOfDayCell
             return cell
-        
+            
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: K.medicationReusableCell, for: indexPath) as! MedicationTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: K.Nibs.medicationReusableCell, for: indexPath) as! MedicationTableViewCell
             return cell
-        
+            
         }
+    }
+
+    func registerNibs() {
+        let medicationCellNib = UINib.init(nibName: K.Nibs.medicationNib, bundle: nil)
+        self.tableView.register(medicationCellNib, forCellReuseIdentifier: K.Nibs.medicationReusableCell)
         
+        let calenderCellNib = UINib.init(nibName: K.Nibs.calendarNib, bundle: nil)
+        self.tableView.register(calenderCellNib, forCellReuseIdentifier: K.Nibs.calendarReusableCell)
         
-       
-    
-}
+        let timeOfDayCellNib = UINib.init(nibName: K.Nibs.timeOfDayNib, bundle: nil)
+        self.tableView.register(timeOfDayCellNib, forCellReuseIdentifier: K.Nibs.timeOfDayReusableCell)
+    }
 
     /*
     // Override to support conditional editing of the table view.

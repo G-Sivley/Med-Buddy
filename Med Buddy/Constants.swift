@@ -9,10 +9,17 @@ import UIKit
 
 struct K {
     
-    static let medicationNib = "MedicationTableViewCell"
-    static let medicationReusableCell = "medicationCell"
+    struct Nibs {
+        static let medicationNib = "MedicationTableViewCell"
+        static let medicationReusableCell = "medicationCell"
+        static let calendarNib = "CalendarTableViewCell"
+        static let calendarReusableCell = "calenderCell"
+        static let timeOfDayNib = "TimeOfDayCell"
+        static let timeOfDayReusableCell = "timeOfDay"
+    }
     
-    struct colors {
+    
+    struct Colors {
         static let drugBackgroundGrey = "DrugBackgroundGrey"
         static let drugDarkBlue = "DrugDarkBlue"
         static let drugGreen = "DrugGreen"

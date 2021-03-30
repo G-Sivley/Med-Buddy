@@ -13,8 +13,8 @@ class CustomTabBarViewController: UITabBarController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        tabBar.unselectedItemTintColor = UIColor(named: K.colors.drugBackgroundGrey)
-        tabBar.tintColor = UIColor(named: K.colors.drugDarkBlue)
+        tabBar.unselectedItemTintColor = UIColor(named: K.Colors.drugBackgroundGrey)
+        tabBar.tintColor = UIColor(named: K.Colors.drugDarkBlue)
         
     }
     
@@ -44,7 +44,7 @@ class CustomTabBarViewController: UITabBarController {
         
         // makes button circular
         button.layer.cornerRadius = buttonWidth / 2
-        button.backgroundColor = UIColor(named: K.colors.drugOrange)
+        button.backgroundColor = UIColor(named: K.Colors.drugOrange)
 
         // sets configuration and places + image
         let thinConfiguration = UIImage.SymbolConfiguration(weight: .thin)

@@ -37,14 +37,13 @@ extension UIViewController {
         }
     }
     
-    func addNavBarShadow() {
-        if let navigationBar = self.navigationController?.navigationBar {
-            
-            navigationBar.layer.masksToBounds = false
-            navigationBar.layer.shadowColor = UIColor.black.cgColor
-            navigationBar.layer.shadowOpacity = 0.2
-            navigationBar.layer.shadowOffset = CGSize(width: -6, height: 6)
-            navigationBar.layer.shadowRadius = 2
-        }
+    func addShadow(view: UIView, color: CGColor = UIColor.black.cgColor, opacity: Float = 0.2, offset: CGSize = CGSize(width: -6, height: 6), radius: CGFloat = 2) {
+        
+        view.layer.masksToBounds = false
+        view.layer.shadowColor = color
+        view.layer.shadowOpacity = opacity
+        view.layer.shadowOffset = offset
+        view.layer.shadowRadius = radius
+        
     }
 }

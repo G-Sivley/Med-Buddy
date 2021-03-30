@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,24 +16,86 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Medication Name" translatesAutoresizingMaskIntoConstraints="NO" id="ldf-bZ-igS">
-                                <rect key="frame" x="0.0" y="140" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <searchBar contentMode="redraw" placeholder="Medication Name" translatesAutoresizingMaskIntoConstraints="NO" id="ldf-bZ-igS">
+                                <rect key="frame" x="0.0" y="140" width="414" height="56"/>
+                                <color key="backgroundColor" name="DrugWhite"/>
+                                <color key="barTintColor" name="DrugBackgroundGrey"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </searchBar>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lRk-nY-sUk">
-                                <rect key="frame" x="38" y="267" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qk4-3W-uha" userLabel="ImageContainerView">
+                                <rect key="frame" x="157" y="214" width="100" height="100"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s7p-fF-9Ah">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1k-A6-RzW">
+                                        <rect key="frame" x="20" y="29" width="60" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="VZP-7i-86H"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Add Image">
+                                                <attributes>
+                                                    <color key="NSColor" name="DrugDarkBlue"/>
+                                                    <font key="NSFont" size="18" name="Quicksand-Regular"/>
+                                                    <font key="NSOriginalFont" size="18" name="Quicksand-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zd7-o4-CwS">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <connections>
+                                            <action selector="addImagePressed:" destination="t2k-We-U2E" eventType="touchUpInside" id="itV-7r-JQV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="DrugWhite"/>
+                                <constraints>
+                                    <constraint firstItem="x1k-A6-RzW" firstAttribute="centerX" secondItem="qk4-3W-uha" secondAttribute="centerX" id="2ma-oP-7FP"/>
+                                    <constraint firstItem="x1k-A6-RzW" firstAttribute="centerY" secondItem="qk4-3W-uha" secondAttribute="centerY" id="DWM-wW-XYO"/>
+                                    <constraint firstItem="zd7-o4-CwS" firstAttribute="top" secondItem="qk4-3W-uha" secondAttribute="top" id="Qob-EE-z9K"/>
+                                    <constraint firstAttribute="width" constant="100" id="UUq-rm-nPv"/>
+                                    <constraint firstAttribute="bottom" secondItem="zd7-o4-CwS" secondAttribute="bottom" id="XbP-QE-rWs"/>
+                                    <constraint firstAttribute="trailing" secondItem="zd7-o4-CwS" secondAttribute="trailing" id="fw7-WV-TfL"/>
+                                    <constraint firstAttribute="height" constant="100" id="lEI-P4-Rgv"/>
+                                    <constraint firstItem="s7p-fF-9Ah" firstAttribute="top" secondItem="qk4-3W-uha" secondAttribute="top" id="lPr-vn-3i7"/>
+                                    <constraint firstAttribute="trailing" secondItem="s7p-fF-9Ah" secondAttribute="trailing" id="qGe-vT-Ojc"/>
+                                    <constraint firstAttribute="bottom" secondItem="s7p-fF-9Ah" secondAttribute="bottom" id="rRa-9b-oMv"/>
+                                    <constraint firstItem="s7p-fF-9Ah" firstAttribute="leading" secondItem="qk4-3W-uha" secondAttribute="leading" id="uX5-OO-O4m"/>
+                                    <constraint firstItem="zd7-o4-CwS" firstAttribute="leading" secondItem="qk4-3W-uha" secondAttribute="leading" id="vEd-bo-Lj3"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5LJ-tG-AjJ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="DrugBackgroundGrey"/>
+                        <constraints>
+                            <constraint firstItem="qk4-3W-uha" firstAttribute="top" secondItem="ldf-bZ-igS" secondAttribute="bottom" constant="18" id="1eC-Hr-Y5v"/>
+                            <constraint firstItem="qk4-3W-uha" firstAttribute="centerX" secondItem="YM2-DS-lAS" secondAttribute="centerX" id="1wo-ea-DjQ"/>
+                            <constraint firstItem="ldf-bZ-igS" firstAttribute="leading" secondItem="5LJ-tG-AjJ" secondAttribute="leading" id="9AV-C5-tHL"/>
+                            <constraint firstItem="qk4-3W-uha" firstAttribute="centerX" secondItem="YM2-DS-lAS" secondAttribute="centerX" id="EWe-Wf-Aog"/>
+                            <constraint firstItem="ldf-bZ-igS" firstAttribute="trailing" secondItem="5LJ-tG-AjJ" secondAttribute="trailing" id="Z5r-Xa-D7K"/>
+                            <constraint firstItem="ldf-bZ-igS" firstAttribute="top" secondItem="5LJ-tG-AjJ" secondAttribute="top" id="xzV-Sb-ZkH"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Medication" id="iFc-jl-Gjb">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrow.backward" catalog="system" id="1cC-Co-7KE">
+                            <color key="tintColor" name="DrugDarkBlue"/>
+                            <connections>
+                                <action selector="backPressed:" destination="t2k-We-U2E" id="1SF-IL-Hj0"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="aca-n0-2KQ">
                             <color key="tintColor" name="DrugDarkBlue"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageContainerView" destination="qk4-3W-uha" id="fve-qC-xke"/>
+                        <outlet property="imageLabel" destination="x1k-A6-RzW" id="l4X-Zl-4vo"/>
+                        <outlet property="medImage" destination="s7p-fF-9Ah" id="eTg-8x-Xkq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="unI-Wi-wcV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -48,6 +109,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="cng-b3-pxr">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="DrugBackgroundGrey"/>
                         <color key="tintColor" name="DrugDarkBlue"/>
                         <color key="barTintColor" name="DrugDarkBlue"/>
                         <textAttributes key="largeTitleTextAttributes">
@@ -66,11 +128,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <namedColor name="DrugBackgroundGrey">
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="DrugDarkBlue">
             <color red="0.125" green="0.27799999713897705" blue="0.3059999942779541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="DrugWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
