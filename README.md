@@ -6,7 +6,7 @@ A medication app that uses vision and firebase scanning functionality to provide
 
 1. Custom tabbar and navigationView
 2. Calendar Picker Technology
-3. ...
+3. Hello
 
 
 
