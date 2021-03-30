@@ -5,46 +5,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Med List-->
-        <scene sceneID="0Vj-lt-K5x">
-            <objects>
-                <viewController id="qLm-wc-24M" customClass="MedListViewController" customModule="Med_Buddy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="a00-GB-at4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="fht-Ek-Jh4"/>
-                        <color key="backgroundColor" name="DrugBackgroundGrey"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Med List" image="pills.fill" catalog="system" selectedImage="pills.fill" id="Toc-dU-ngs"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dHb-Pk-w7K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-759.4202898550725" y="156.69642857142856"/>
-        </scene>
-        <!--Schedule Table View Controller-->
-        <scene sceneID="JIC-qr-PDT">
-            <objects>
-                <tableViewController id="PXY-k9-Nfm" customClass="ScheduleTableViewController" customModule="Med_Buddy" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="G5F-KS-3qI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <color key="sectionIndexBackgroundColor" name="DrugBackgroundGrey"/>
-                        <connections>
-                            <outlet property="dataSource" destination="PXY-k9-Nfm" id="I3U-nR-6sE"/>
-                            <outlet property="delegate" destination="PXY-k9-Nfm" id="ciz-zQ-eN4"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="AMz-dw-Ejy"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3fk-wI-9mo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="70" y="-490"/>
-        </scene>
         <!--Custom Tab Bar View Controller-->
         <scene sceneID="ehB-ya-HDN">
             <objects>
@@ -57,12 +20,12 @@
                         <color key="selectedImageTintColor" name="DrugDarkBlue"/>
                     </tabBar>
                     <connections>
-                        <segue destination="p5s-aw-bcH" kind="relationship" relationship="viewControllers" id="s1b-5d-715"/>
-                        <segue destination="qLm-wc-24M" kind="relationship" relationship="viewControllers" id="0c4-xK-odF"/>
+                        <segue destination="gyO-hl-w2i" kind="relationship" relationship="viewControllers" id="s1b-5d-715"/>
+                        <segue destination="5JM-ma-fps" kind="relationship" relationship="viewControllers" id="0c4-xK-odF"/>
                         <segue destination="nNJ-jP-Cyu" kind="relationship" relationship="viewControllers" id="55Z-k5-Q33"/>
-                        <segue destination="CA9-AL-7nM" kind="relationship" relationship="viewControllers" id="BKF-JH-cjp"/>
-                        <segue destination="vyb-rz-vwE" kind="relationship" relationship="viewControllers" id="pqQ-17-2VE"/>
-                        <segue destination="t2k-We-U2E" kind="presentation" identifier="add" id="ccq-NJ-euZ"/>
+                        <segue destination="9dG-Eq-PeL" kind="relationship" relationship="viewControllers" id="BKF-JH-cjp"/>
+                        <segue destination="dKS-6Q-ck9" kind="relationship" relationship="viewControllers" id="pqQ-17-2VE"/>
+                        <segue destination="Sal-PP-ZfZ" kind="presentation" identifier="add" id="ccq-NJ-euZ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OfG-EU-3DR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -85,100 +48,61 @@
             </objects>
             <point key="canvasLocation" x="-758" y="802"/>
         </scene>
-        <!--Symptoms-->
-        <scene sceneID="frG-3J-E2y">
+        <!--Schedule-->
+        <scene sceneID="ZAu-BD-2M7">
             <objects>
-                <viewController id="CA9-AL-7nM" customClass="SymptomsViewController" customModule="Med_Buddy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="L7f-2Y-Sia">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Cil-bc-kaf"/>
-                        <color key="backgroundColor" name="DrugBackgroundGrey"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Symptoms" image="bandage" catalog="system" id="n13-NC-Iyy"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AaV-j1-IYw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Schedule" id="gyO-hl-w2i" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="7Mc-YC-RmT"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HOz-XR-Xuy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2047" y="1214"/>
+        </scene>
+        <!--MedList-->
+        <scene sceneID="JeU-dG-u1D">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MedList" id="5JM-ma-fps" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="m5o-YT-hYv"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GMl-pg-1jO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1818" y="1213"/>
+        </scene>
+        <!--AddMed-->
+        <scene sceneID="Av5-Qy-0aT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddMed" id="Sal-PP-ZfZ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xxz-GF-CJW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1575" y="1213"/>
+        </scene>
+        <!--Symptoms-->
+        <scene sceneID="T9r-Tb-kL1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Symptoms" id="9dG-Eq-PeL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="mHW-4x-6EI"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fbr-be-ykb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-759" y="1426"/>
         </scene>
-        <!--Add View Controller-->
-        <scene sceneID="F4j-aa-UbL">
-            <objects>
-                <viewController id="t2k-We-U2E" customClass="AddViewController" customModule="Med_Buddy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="YM2-DS-lAS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="5LJ-tG-AjJ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="unI-Wi-wcV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="70" y="802"/>
-        </scene>
         <!--More-->
-        <scene sceneID="Quv-Ge-mGc">
+        <scene sceneID="Pzh-C4-nzS">
             <objects>
-                <viewController id="vyb-rz-vwE" customClass="MoreViewController" customModule="Med_Buddy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xAZ-hH-7Fm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="W3u-At-4aU"/>
-                        <color key="backgroundColor" name="DrugBackgroundGrey"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="More" image="ellipsis.circle" catalog="system" id="81h-51-Vcs"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2zS-qg-FiO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="More" id="dKS-6Q-ck9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="br0-zd-pbR"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3yZ-tt-hpn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-759" y="2058"/>
         </scene>
-        <!--Schedule-->
-        <scene sceneID="Sgh-wz-hZU">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p5s-aw-bcH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Schedule" image="calendar" catalog="system" selectedImage="calendar" id="8g0-nj-otr"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="jK4-Ag-8Bx">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" name="DrugWhite"/>
-                        <color key="barTintColor" name="DrugDarkBlue"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" name="DrugDarkBlue"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" name="DrugDarkBlue"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="PXY-k9-Nfm" kind="relationship" relationship="rootViewController" id="1HR-cI-L0Y"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TEu-K7-xKS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-757.97101449275374" y="-490.17857142857139"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="bandage" catalog="system" width="128" height="122"/>
-        <image name="calendar" catalog="system" width="128" height="106"/>
-        <image name="ellipsis.circle" catalog="system" width="128" height="121"/>
-        <image name="pills.fill" catalog="system" width="128" height="106"/>
-        <namedColor name="DrugBackgroundGrey">
-            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="DrugDarkBlue">
             <color red="0.125" green="0.27799999713897705" blue="0.3059999942779541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="DrugGreen">
             <color red="0.36100000143051147" green="0.59600001573562622" blue="0.49399998784065247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="DrugWhite">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
