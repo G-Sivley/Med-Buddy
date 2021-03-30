@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qLm-wc-24M">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Med List-->
+        <scene sceneID="0Vj-lt-K5x">
+            <objects>
+                <viewController id="qLm-wc-24M" customClass="MedListViewController" customModule="Med_Buddy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a00-GB-at4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="fht-Ek-Jh4"/>
+                        <color key="backgroundColor" name="DrugBackgroundGrey"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Med List" image="pills.fill" catalog="system" selectedImage="pills.fill" id="Toc-dU-ngs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dHb-Pk-w7K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-759.4202898550725" y="156.69642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pills.fill" catalog="system" width="128" height="106"/>
+        <namedColor name="DrugBackgroundGrey">
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

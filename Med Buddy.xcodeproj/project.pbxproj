@@ -11,9 +11,14 @@
 		900B734A260D9392003A1703 /* MedicationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 900B7348260D9392003A1703 /* MedicationTableViewCell.xib */; };
 		900EE0492610179E0053D892 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0472610179E0053D892 /* CalendarTableViewCell.swift */; };
 		900EE04A2610179E0053D892 /* CalendarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 900EE0482610179E0053D892 /* CalendarTableViewCell.xib */; };
+		9021B04E2612A1800012363A /* MedList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9021B04C2612A1800012363A /* MedList.storyboard */; };
+		9021B0522612A1AC0012363A /* AddMed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9021B0502612A1AC0012363A /* AddMed.storyboard */; };
+		9021B0562612A3030012363A /* Symptoms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9021B0542612A3030012363A /* Symptoms.storyboard */; };
+		9021B05A2612A3180012363A /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9021B0582612A3180012363A /* More.storyboard */; };
 		90233F192608F3780033221A /* NavBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90233F182608F3780033221A /* NavBarExtension.swift */; };
 		904E46A42607C2E500E79643 /* MedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E46A32607C2E500E79643 /* MedListViewController.swift */; };
 		905BAF8C26101D2500EDF78B /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905BAF8B26101D2500EDF78B /* ScheduleTableViewController.swift */; };
+		906EFA192612A0FF006A3647 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 906EFA172612A0FF006A3647 /* Schedule.storyboard */; };
 		907812F126112C2700EB59ED /* TimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907812F026112C2700EB59ED /* TimeLabel.swift */; };
 		907812F8261146B400EB59ED /* TimeOfDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907812F6261146B400EB59ED /* TimeOfDayCell.swift */; };
 		907812F9261146B400EB59ED /* TimeOfDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 907812F7261146B400EB59ED /* TimeOfDayCell.xib */; };
@@ -44,9 +49,14 @@
 		900B7348260D9392003A1703 /* MedicationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicationTableViewCell.xib; sourceTree = "<group>"; };
 		900EE0472610179E0053D892 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		900EE0482610179E0053D892 /* CalendarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarTableViewCell.xib; sourceTree = "<group>"; };
+		9021B04D2612A1800012363A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MedList.storyboard; sourceTree = "<group>"; };
+		9021B0512612A1AC0012363A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AddMed.storyboard; sourceTree = "<group>"; };
+		9021B0552612A3030012363A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Symptoms.storyboard; sourceTree = "<group>"; };
+		9021B0592612A3180012363A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/More.storyboard; sourceTree = "<group>"; };
 		90233F182608F3780033221A /* NavBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarExtension.swift; sourceTree = "<group>"; };
 		904E46A32607C2E500E79643 /* MedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedListViewController.swift; sourceTree = "<group>"; };
 		905BAF8B26101D2500EDF78B /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
+		906EFA182612A0FF006A3647 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Schedule.storyboard; sourceTree = "<group>"; };
 		907812F026112C2700EB59ED /* TimeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLabel.swift; sourceTree = "<group>"; };
 		907812F6261146B400EB59ED /* TimeOfDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeOfDayCell.swift; sourceTree = "<group>"; };
 		907812F7261146B400EB59ED /* TimeOfDayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeOfDayCell.xib; sourceTree = "<group>"; };
@@ -103,6 +113,11 @@
 		900B7345260D9352003A1703 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9021B0582612A3180012363A /* More.storyboard */,
+				9021B0542612A3030012363A /* Symptoms.storyboard */,
+				9021B0502612A1AC0012363A /* AddMed.storyboard */,
+				9021B04C2612A1800012363A /* MedList.storyboard */,
+				906EFA172612A0FF006A3647 /* Schedule.storyboard */,
 				90EA099726072BD900CABE30 /* Main.storyboard */,
 				907812F026112C2700EB59ED /* TimeLabel.swift */,
 			);
@@ -293,14 +308,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				900B734A260D9392003A1703 /* MedicationTableViewCell.xib in Resources */,
+				9021B05A2612A3180012363A /* More.storyboard in Resources */,
 				90B383C6260731D4003EF110 /* Quicksand Dash.otf in Resources */,
 				90B383C7260731D4003EF110 /* Quicksand Bold.otf in Resources */,
+				9021B04E2612A1800012363A /* MedList.storyboard in Resources */,
 				90EA099E26072BDD00CABE30 /* LaunchScreen.storyboard in Resources */,
 				90B383C5260731D4003EF110 /* Quicksand BoldItalic.otf in Resources */,
 				90B383CB260731D4003EF110 /* Quicksand Italic.otf in Resources */,
+				9021B0522612A1AC0012363A /* AddMed.storyboard in Resources */,
 				907812F9261146B400EB59ED /* TimeOfDayCell.xib in Resources */,
+				906EFA192612A0FF006A3647 /* Schedule.storyboard in Resources */,
 				90EA099B26072BDD00CABE30 /* Assets.xcassets in Resources */,
 				900EE04A2610179E0053D892 /* CalendarTableViewCell.xib in Resources */,
+				9021B0562612A3030012363A /* Symptoms.storyboard in Resources */,
 				90B383C9260731D4003EF110 /* Quicksand Light.otf in Resources */,
 				90B383CA260731D4003EF110 /* Quicksand LightItalic.otf in Resources */,
 				90B383C8260731D4003EF110 /* Quicksand Regular.otf in Resources */,
@@ -360,6 +380,46 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		9021B04C2612A1800012363A /* MedList.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9021B04D2612A1800012363A /* Base */,
+			);
+			name = MedList.storyboard;
+			sourceTree = "<group>";
+		};
+		9021B0502612A1AC0012363A /* AddMed.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9021B0512612A1AC0012363A /* Base */,
+			);
+			name = AddMed.storyboard;
+			sourceTree = "<group>";
+		};
+		9021B0542612A3030012363A /* Symptoms.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9021B0552612A3030012363A /* Base */,
+			);
+			name = Symptoms.storyboard;
+			sourceTree = "<group>";
+		};
+		9021B0582612A3180012363A /* More.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9021B0592612A3180012363A /* Base */,
+			);
+			name = More.storyboard;
+			sourceTree = "<group>";
+		};
+		906EFA172612A0FF006A3647 /* Schedule.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				906EFA182612A0FF006A3647 /* Base */,
+			);
+			name = Schedule.storyboard;
+			sourceTree = "<group>";
+		};
 		90EA099726072BD900CABE30 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

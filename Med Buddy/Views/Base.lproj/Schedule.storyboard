@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p5s-aw-bcH">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Schedule Table View Controller-->
+        <scene sceneID="JIC-qr-PDT">
+            <objects>
+                <tableViewController id="PXY-k9-Nfm" customClass="ScheduleTableViewController" customModule="Med_Buddy" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="G5F-KS-3qI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="sectionIndexBackgroundColor" name="DrugBackgroundGrey"/>
+                        <connections>
+                            <outlet property="dataSource" destination="PXY-k9-Nfm" id="I3U-nR-6sE"/>
+                            <outlet property="delegate" destination="PXY-k9-Nfm" id="ciz-zQ-eN4"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="AMz-dw-Ejy"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3fk-wI-9mo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="70" y="-490"/>
+        </scene>
+        <!--Schedule-->
+        <scene sceneID="Sgh-wz-hZU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p5s-aw-bcH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Schedule" image="calendar" catalog="system" selectedImage="calendar" id="8g0-nj-otr"/>
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO">
+                        <color key="barTintColor" name="DrugDarkBlue"/>
+                    </simulatedNavigationBarMetrics>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="jK4-Ag-8Bx">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="DrugWhite"/>
+                        <color key="barTintColor" name="DrugDarkBlue"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="DrugDarkBlue"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" name="DrugDarkBlue"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PXY-k9-Nfm" kind="relationship" relationship="rootViewController" id="1HR-cI-L0Y"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TEu-K7-xKS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-757.97101449275374" y="-490.17857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="calendar" catalog="system" width="128" height="106"/>
+        <namedColor name="DrugBackgroundGrey">
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DrugDarkBlue">
+            <color red="0.125" green="0.27799999713897705" blue="0.3059999942779541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DrugWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
