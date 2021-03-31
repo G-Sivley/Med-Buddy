@@ -9,13 +9,15 @@ import UIKit
 
 struct K {
     
-    struct Nibs {
+    struct Cells {
         static let medicationNib = "MedicationTableViewCell"
         static let medicationReusableCell = "medicationCell"
         static let calendarNib = "CalendarTableViewCell"
         static let calendarReusableCell = "calenderCell"
         static let timeOfDayNib = "TimeOfDayCell"
         static let timeOfDayReusableCell = "timeOfDay"
+        static let medicationOptionssCell = "medicationOptionsCell"
+        
     }
     
     

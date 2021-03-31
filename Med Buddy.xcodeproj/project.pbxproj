@@ -113,12 +113,12 @@
 		900B7345260D9352003A1703 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				90EA099726072BD900CABE30 /* Main.storyboard */,
 				9021B0582612A3180012363A /* More.storyboard */,
 				9021B0542612A3030012363A /* Symptoms.storyboard */,
 				9021B0502612A1AC0012363A /* AddMed.storyboard */,
 				9021B04C2612A1800012363A /* MedList.storyboard */,
 				906EFA172612A0FF006A3647 /* Schedule.storyboard */,
-				90EA099726072BD900CABE30 /* Main.storyboard */,
 				907812F026112C2700EB59ED /* TimeLabel.swift */,
 			);
 			path = Views;

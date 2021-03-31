@@ -42,7 +42,7 @@ class ScheduleTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.Nibs.calendarReusableCell)
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.Cells.calendarReusableCell)
         
         
         return cell
@@ -59,25 +59,25 @@ class ScheduleTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: K.Nibs.timeOfDayReusableCell, for: indexPath) as! TimeOfDayCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: K.Cells.timeOfDayReusableCell, for: indexPath) as! TimeOfDayCell
             return cell
             
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: K.Nibs.medicationReusableCell, for: indexPath) as! MedicationTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: K.Cells.medicationReusableCell, for: indexPath) as! MedicationTableViewCell
             return cell
             
         }
     }
 
     func registerNibs() {
-        let medicationCellNib = UINib.init(nibName: K.Nibs.medicationNib, bundle: nil)
-        self.tableView.register(medicationCellNib, forCellReuseIdentifier: K.Nibs.medicationReusableCell)
+        let medicationCellNib = UINib.init(nibName: K.Cells.medicationNib, bundle: nil)
+        self.tableView.register(medicationCellNib, forCellReuseIdentifier: K.Cells.medicationReusableCell)
         
-        let calenderCellNib = UINib.init(nibName: K.Nibs.calendarNib, bundle: nil)
-        self.tableView.register(calenderCellNib, forCellReuseIdentifier: K.Nibs.calendarReusableCell)
+        let calenderCellNib = UINib.init(nibName: K.Cells.calendarNib, bundle: nil)
+        self.tableView.register(calenderCellNib, forCellReuseIdentifier: K.Cells.calendarReusableCell)
         
-        let timeOfDayCellNib = UINib.init(nibName: K.Nibs.timeOfDayNib, bundle: nil)
-        self.tableView.register(timeOfDayCellNib, forCellReuseIdentifier: K.Nibs.timeOfDayReusableCell)
+        let timeOfDayCellNib = UINib.init(nibName: K.Cells.timeOfDayNib, bundle: nil)
+        self.tableView.register(timeOfDayCellNib, forCellReuseIdentifier: K.Cells.timeOfDayReusableCell)
     }
 
     /*
