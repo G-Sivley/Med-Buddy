@@ -7,8 +7,7 @@
 
 import UIKit
 
-class ScheduleTableViewController: UITableViewController {
-
+class ScheduleTableViewController: UITableViewController  {
     let medicationsArray = ["Fluoxetine", "Prasugrel", "Ibuprofen"]
     
     let timeLabel = TimeLabel()
@@ -28,28 +27,40 @@ class ScheduleTableViewController: UITableViewController {
     
     //MARK: - Navigation Bar Setup
     func setupNavBar() {
-        configureNavigationBar(largeTitleColor: UIColor(named: K.Colors.drugDarkBlue)!, backgoundColor: UIColor.white, tintColor: UIColor(named: K.Colors.drugDarkBlue)!, title: "Schedule", preferredLargeTitle: true)
+        // Setup for large title
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithTransparentBackground()
+        
+        // Setup for standard title
+        let standardAppearance = UINavigationBarAppearance()
+        standardAppearance.configureWithOpaqueBackground()
+//        navBarAppearance.backgroundColor = UIColor(named: K.Colors.drugBackgroundGrey)
+        standardAppearance.backgroundColor = UIColor(named: K.Colors.drugBackgroundGrey)
     
         if let navigationBar = self.navigationController?.navigationBar {
+            navigationBar.standardAppearance = standardAppearance
+            navigationBar.scrollEdgeAppearance = navBarAppearance
             timeLabel.setupTimeLabel(on: navigationBar)
-            addShadow(view: navigationBar)
+            
+            // addShadow(view: navigationBar)
         }
     }
     
     
     //MARK: - TableView Setup
     
-    
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.Cells.calendarReusableCell)
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 335
+        // height of addMedButton
+        if indexPath.row == 0 {
+            return 45
+        } else if indexPath.row == 1 {
+            // height of calendar
+            return 335
+        } else {
+            // height of rest of rows (automatic)
+            return tableView.rowHeight
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,18 +68,35 @@ class ScheduleTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        // Add button location
         if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: K.Cells.addMedCell) as! AddMedButtonTableViewCell
+            
+            cell.delegate = self
+            cell.indexPath = indexPath
+            return cell
+        }
+        // Calendar Location
+        if indexPath.row == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: K.Cells.calendarReusableCell) as! CalendarTableViewCell
+            
+            return cell
+        }
+        // Divider cell location
+        if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: K.Cells.timeOfDayReusableCell, for: indexPath) as! TimeOfDayCell
             return cell
             
         } else {
+            // standard med cell
             let cell = tableView.dequeueReusableCell(withIdentifier: K.Cells.medicationReusableCell, for: indexPath) as! MedicationTableViewCell
             return cell
             
         }
     }
 
+    //MARK: - Nib Registration
+    
     func registerNibs() {
         let medicationCellNib = UINib.init(nibName: K.Cells.medicationNib, bundle: nil)
         self.tableView.register(medicationCellNib, forCellReuseIdentifier: K.Cells.medicationReusableCell)
@@ -78,6 +106,10 @@ class ScheduleTableViewController: UITableViewController {
         
         let timeOfDayCellNib = UINib.init(nibName: K.Cells.timeOfDayNib, bundle: nil)
         self.tableView.register(timeOfDayCellNib, forCellReuseIdentifier: K.Cells.timeOfDayReusableCell)
+        
+        let addMedCellNib = UINib.init(nibName: K.Cells.addMedNib, bundle: nil)
+        self.tableView.register(addMedCellNib, forCellReuseIdentifier: K.Cells.addMedCell)
+        
     }
 
     /*
@@ -130,4 +162,12 @@ class ScheduleTableViewController: UITableViewController {
         guard let height = navigationController?.navigationBar.frame.height else { return }
         timeLabel.moveAndResizeLabel(for: height)
     }
+}
+
+//MARK: - Add Button Delegate
+extension ScheduleTableViewController: AddMedsDelegate {
+    func addMedTapped(at index: IndexPath) {
+        performSegue(withIdentifier: K.Segue.addMedSegue, sender: self)
+    }
+    
 }

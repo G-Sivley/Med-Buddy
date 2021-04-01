@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="addMed" rowHeight="45" id="KGk-i7-Jjw" customClass="AddMedButtonTableViewCell" customModule="Med_Buddy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="437" height="45"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="437" height="45"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dEd-r5-Ycy">
+                        <rect key="frame" x="30" y="5" width="377" height="40"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5h-uQ-zMn">
+                                <rect key="frame" x="0.0" y="0.0" width="377" height="40"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <state key="normal">
+                                    <color key="titleColor" name="DrugWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="GSy-fj-Kjg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Medication" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sj-v0-yS6">
+                                <rect key="frame" x="112.5" y="8" width="152.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <color key="textColor" name="DrugWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8OT-f2-s5o">
+                                <rect key="frame" x="332.5" y="2" width="29.5" height="36"/>
+                                <color key="tintColor" name="DrugWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8OT-f2-s5o" secondAttribute="height" multiplier="11:15" id="SUy-WU-J2Y"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="DrugBackgroundGrey"/>
+                        <constraints>
+                            <constraint firstItem="w5h-uQ-zMn" firstAttribute="top" secondItem="dEd-r5-Ycy" secondAttribute="top" id="0Cr-Nq-98z"/>
+                            <constraint firstAttribute="trailing" secondItem="w5h-uQ-zMn" secondAttribute="trailing" id="4Nj-Ph-lDl"/>
+                            <constraint firstAttribute="trailing" secondItem="8OT-f2-s5o" secondAttribute="trailing" constant="15" id="6uz-OU-nMw"/>
+                            <constraint firstItem="8OT-f2-s5o" firstAttribute="top" secondItem="dEd-r5-Ycy" secondAttribute="top" id="8R4-PC-r5a"/>
+                            <constraint firstItem="6sj-v0-yS6" firstAttribute="centerY" secondItem="dEd-r5-Ycy" secondAttribute="centerY" id="KG5-iK-h6R"/>
+                            <constraint firstItem="6sj-v0-yS6" firstAttribute="centerY" secondItem="dEd-r5-Ycy" secondAttribute="centerY" id="OkB-q9-cI3"/>
+                            <constraint firstAttribute="bottom" secondItem="w5h-uQ-zMn" secondAttribute="bottom" id="boE-yF-tcv"/>
+                            <constraint firstAttribute="bottom" secondItem="8OT-f2-s5o" secondAttribute="bottom" id="eIr-B8-s2F"/>
+                            <constraint firstItem="6sj-v0-yS6" firstAttribute="centerX" secondItem="dEd-r5-Ycy" secondAttribute="centerX" id="fMh-wM-vSh"/>
+                            <constraint firstItem="w5h-uQ-zMn" firstAttribute="leading" secondItem="dEd-r5-Ycy" secondAttribute="leading" id="rs2-eR-dQI"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="dEd-r5-Ycy" secondAttribute="bottom" id="8Zw-Xn-dxk"/>
+                    <constraint firstItem="dEd-r5-Ycy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="Ogk-ca-zVi"/>
+                    <constraint firstItem="dEd-r5-Ycy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="TNf-xl-a7t"/>
+                    <constraint firstAttribute="trailing" secondItem="dEd-r5-Ycy" secondAttribute="trailing" constant="30" id="mzR-z4-5fa"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="addMedButton" destination="w5h-uQ-zMn" id="yLb-9F-flg"/>
+            </connections>
+            <point key="canvasLocation" x="103.62318840579711" y="112.83482142857142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <namedColor name="AccentColor">
+            <color red="0.36078431372549019" green="0.59607843137254901" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DrugBackgroundGrey">
+            <color red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DrugWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

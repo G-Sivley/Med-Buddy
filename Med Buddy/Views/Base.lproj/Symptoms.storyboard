@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CA9-AL-7nM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Symptoms-->
+        <!--Symptoms View Controller-->
         <scene sceneID="frG-3J-E2y">
             <objects>
                 <viewController id="CA9-AL-7nM" customClass="SymptomsViewController" customModule="Med_Buddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L7f-2Y-Sia">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Cil-bc-kaf"/>
                         <color key="backgroundColor" name="DrugBackgroundGrey"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Symptoms" image="bandage" catalog="system" id="n13-NC-Iyy"/>
+                    <tabBarItem key="tabBarItem" title="" id="n13-NC-Iyy">
+                        <imageReference key="image" image="bandage.fill" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AaV-j1-IYw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -25,7 +29,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bandage" catalog="system" width="128" height="122"/>
+        <image name="bandage.fill" catalog="system" width="128" height="122"/>
         <namedColor name="DrugBackgroundGrey">
             <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

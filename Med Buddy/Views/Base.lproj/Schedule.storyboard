@@ -3,36 +3,57 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Schedule Table View Controller-->
+        <!--Schedule-->
         <scene sceneID="JIC-qr-PDT">
             <objects>
                 <tableViewController id="PXY-k9-Nfm" customClass="ScheduleTableViewController" customModule="Med_Buddy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="G5F-KS-3qI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="DrugBackgroundGrey"/>
                         <color key="sectionIndexBackgroundColor" name="DrugBackgroundGrey"/>
                         <connections>
                             <outlet property="dataSource" destination="PXY-k9-Nfm" id="I3U-nR-6sE"/>
                             <outlet property="delegate" destination="PXY-k9-Nfm" id="ciz-zQ-eN4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="AMz-dw-Ejy"/>
+                    <navigationItem key="navigationItem" title="Schedule" id="AMz-dw-Ejy">
+                        <barButtonItem key="leftBarButtonItem" id="Iaw-hj-k8L">
+                            <imageReference key="image" image="person.fill" catalog="system" symbolScale="large"/>
+                            <color key="tintColor" name="AccentColor"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="Eht-em-SyU" kind="show" identifier="addMed" id="cIg-ix-BNc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3fk-wI-9mo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="70" y="-490"/>
         </scene>
-        <!--Schedule-->
+        <!--AddViewController-->
+        <scene sceneID="kXA-CB-NLe">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddMed" referencedIdentifier="AddViewController" id="Eht-em-SyU" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ZRa-cc-s3t"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mFz-QV-YDh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="809" y="-490"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="Sgh-wz-hZU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p5s-aw-bcH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Schedule" image="calendar" catalog="system" selectedImage="calendar" id="8g0-nj-otr"/>
+                    <tabBarItem key="tabBarItem" title="" selectedImage="calendar" catalog="system" id="8g0-nj-otr">
+                        <imageReference key="image" image="calendar" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO">
                         <color key="barTintColor" name="DrugDarkBlue"/>
@@ -40,13 +61,14 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="jK4-Ag-8Bx">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" name="DrugWhite"/>
-                        <color key="barTintColor" name="DrugDarkBlue"/>
+                        <color key="backgroundColor" name="DrugBackgroundGrey"/>
+                        <color key="tintColor" name="DrugBackgroundGrey"/>
+                        <color key="barTintColor" name="DrugBackgroundGrey"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" name="DrugDarkBlue"/>
+                            <color key="textColor" systemColor="labelColor"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" name="DrugDarkBlue"/>
+                            <color key="textColor" systemColor="labelColor"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -61,17 +83,18 @@
     </scenes>
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <namedColor name="AccentColor">
+            <color red="0.36078431372549019" green="0.59607843137254901" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="DrugBackgroundGrey">
-            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="DrugDarkBlue">
             <color red="0.125" green="0.27799999713897705" blue="0.3059999942779541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="DrugWhite">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

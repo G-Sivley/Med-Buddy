@@ -135,10 +135,10 @@
             </objects>
             <point key="canvasLocation" x="979.71014492753636" y="801.5625"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--AddViewController-->
         <scene sceneID="Xj9-R4-4Ed">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VY6-Tf-Rne" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AddViewController" title="AddViewController" automaticallyAdjustsScrollViewInsets="NO" id="VY6-Tf-Rne" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="cng-b3-pxr">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -164,7 +164,7 @@
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <namedColor name="DrugBackgroundGrey">
-            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="DrugDarkBlue">
             <color red="0.125" green="0.27799999713897705" blue="0.3059999942779541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

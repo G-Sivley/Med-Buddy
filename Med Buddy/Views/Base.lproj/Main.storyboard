@@ -4,49 +4,31 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Custom Tab Bar View Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="ehB-ya-HDN">
             <objects>
-                <tabBarController id="6kf-BQ-jIr" customClass="CustomTabBarViewController" customModule="Med_Buddy" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="6kf-BQ-jIr" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Eoh-gt-tYL" customClass="TabBarViewController" customModule="Med_Buddy" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" name="DrugGreen"/>
-                        <color key="selectedImageTintColor" name="DrugDarkBlue"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.87192920723346745" green="0.87192920723346745" blue="0.87192920723346745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" name="AccentColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="gyO-hl-w2i" kind="relationship" relationship="viewControllers" id="s1b-5d-715"/>
                         <segue destination="5JM-ma-fps" kind="relationship" relationship="viewControllers" id="0c4-xK-odF"/>
-                        <segue destination="nNJ-jP-Cyu" kind="relationship" relationship="viewControllers" id="55Z-k5-Q33"/>
                         <segue destination="9dG-Eq-PeL" kind="relationship" relationship="viewControllers" id="BKF-JH-cjp"/>
-                        <segue destination="dKS-6Q-ck9" kind="relationship" relationship="viewControllers" id="pqQ-17-2VE"/>
-                        <segue destination="Sal-PP-ZfZ" kind="presentation" identifier="add" id="ccq-NJ-euZ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OfG-EU-3DR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1575" y="802"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="hUl-w6-Fp2">
-            <objects>
-                <viewController id="nNJ-jP-Cyu" sceneMemberID="viewController">
-                    <view key="view" opaque="NO" contentMode="scaleToFill" id="sPc-q7-WeE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="o5G-gq-J7E"/>
-                        <color key="backgroundColor" name="DrugDarkBlue"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" id="ceT-di-mg8"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="t33-ql-NEO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-758" y="802"/>
         </scene>
         <!--Schedule-->
         <scene sceneID="ZAu-BD-2M7">
@@ -66,14 +48,6 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GMl-pg-1jO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1818" y="1213"/>
-        </scene>
-        <!--AddMed-->
-        <scene sceneID="Av5-Qy-0aT">
-            <objects>
-                <viewControllerPlaceholder storyboardName="AddMed" id="Sal-PP-ZfZ" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xxz-GF-CJW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
             <point key="canvasLocation" x="-1575" y="1213"/>
         </scene>
         <!--Symptoms-->
@@ -84,25 +58,12 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fbr-be-ykb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-759" y="1426"/>
-        </scene>
-        <!--More-->
-        <scene sceneID="Pzh-C4-nzS">
-            <objects>
-                <viewControllerPlaceholder storyboardName="More" id="dKS-6Q-ck9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="br0-zd-pbR"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3yZ-tt-hpn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-759" y="2058"/>
+            <point key="canvasLocation" x="-1176" y="1213"/>
         </scene>
     </scenes>
     <resources>
-        <namedColor name="DrugDarkBlue">
-            <color red="0.125" green="0.27799999713897705" blue="0.3059999942779541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="DrugGreen">
-            <color red="0.36100000143051147" green="0.59600001573562622" blue="0.49399998784065247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="AccentColor">
+            <color red="0.36078431372549019" green="0.59607843137254901" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
