@@ -105,6 +105,7 @@
 		900B7345260D9352003A1703 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				904186AA2615917900A94772 /* Launch Screen */,
 				90EA099726072BD900CABE30 /* Main.storyboard */,
 				906EFA172612A0FF006A3647 /* Schedule.storyboard */,
 				9021B04C2612A1800012363A /* MedList.storyboard */,
@@ -146,6 +147,14 @@
 				90233F182608F3780033221A /* ViewControllerExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		904186AA2615917900A94772 /* Launch Screen */ = {
+			isa = PBXGroup;
+			children = (
+				90EA099C26072BDD00CABE30 /* LaunchScreen.storyboard */,
+			);
+			path = "Launch Screen";
 			sourceTree = "<group>";
 		};
 		904E46A62607C32700E79643 /* Controllers */ = {
@@ -208,7 +217,6 @@
 				900B7345260D9352003A1703 /* Views */,
 				904E46A62607C32700E79643 /* Controllers */,
 				90EA099A26072BDD00CABE30 /* Assets.xcassets */,
-				90EA099C26072BDD00CABE30 /* LaunchScreen.storyboard */,
 				90EA099F26072BDD00CABE30 /* Info.plist */,
 				90D3AA6D2607ED8300894F33 /* Constants.swift */,
 				90233F1B2608F37E0033221A /* Extensions */,
