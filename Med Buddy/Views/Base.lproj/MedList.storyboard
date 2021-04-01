@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qLm-wc-24M">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Med List-->
+        <!--Med List View Controller-->
         <scene sceneID="0Vj-lt-K5x">
             <objects>
                 <viewController id="qLm-wc-24M" customClass="MedListViewController" customModule="Med_Buddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a00-GB-at4">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="fht-Ek-Jh4"/>
                         <color key="backgroundColor" name="DrugBackgroundGrey"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Med List" image="pills.fill" catalog="system" selectedImage="pills.fill" id="Toc-dU-ngs"/>
+                    <tabBarItem key="tabBarItem" title="" selectedImage="pills.fill" catalog="system" id="Toc-dU-ngs">
+                        <imageReference key="image" image="pills.fill" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dHb-Pk-w7K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

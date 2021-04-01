@@ -68,15 +68,49 @@
                                     <constraint firstItem="zd7-o4-CwS" firstAttribute="leading" secondItem="qk4-3W-uha" secondAttribute="leading" id="vEd-bo-Lj3"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JuA-7A-q4d">
+                                <rect key="frame" x="151.5" y="334" width="111" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1HK-Vf-jan"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Fluoxetine">
+                                        <attributes>
+                                            <font key="NSFont" size="24" name="Quicksand-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="haz-50-Zf5">
+                                <rect key="frame" x="0.0" y="394" width="414" height="502"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="medicationOptionsCell" id="xwV-XR-P3H">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xwV-XR-P3H" id="tcC-oN-svn">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5LJ-tG-AjJ"/>
                         <color key="backgroundColor" name="DrugBackgroundGrey"/>
                         <constraints>
                             <constraint firstItem="qk4-3W-uha" firstAttribute="top" secondItem="ldf-bZ-igS" secondAttribute="bottom" constant="18" id="1eC-Hr-Y5v"/>
                             <constraint firstItem="qk4-3W-uha" firstAttribute="centerX" secondItem="YM2-DS-lAS" secondAttribute="centerX" id="1wo-ea-DjQ"/>
+                            <constraint firstAttribute="bottom" secondItem="haz-50-Zf5" secondAttribute="bottom" id="3l9-Xk-2nD"/>
                             <constraint firstItem="ldf-bZ-igS" firstAttribute="leading" secondItem="5LJ-tG-AjJ" secondAttribute="leading" id="9AV-C5-tHL"/>
                             <constraint firstItem="qk4-3W-uha" firstAttribute="centerX" secondItem="YM2-DS-lAS" secondAttribute="centerX" id="EWe-Wf-Aog"/>
+                            <constraint firstItem="JuA-7A-q4d" firstAttribute="centerX" secondItem="YM2-DS-lAS" secondAttribute="centerX" id="WNI-cf-6gC"/>
                             <constraint firstItem="ldf-bZ-igS" firstAttribute="trailing" secondItem="5LJ-tG-AjJ" secondAttribute="trailing" id="Z5r-Xa-D7K"/>
+                            <constraint firstItem="haz-50-Zf5" firstAttribute="leading" secondItem="5LJ-tG-AjJ" secondAttribute="leading" id="bMl-JL-cHw"/>
+                            <constraint firstItem="haz-50-Zf5" firstAttribute="top" secondItem="JuA-7A-q4d" secondAttribute="bottom" constant="30" id="ckF-Mm-0Xx"/>
+                            <constraint firstItem="5LJ-tG-AjJ" firstAttribute="trailing" secondItem="haz-50-Zf5" secondAttribute="trailing" id="qfd-o1-rFd"/>
+                            <constraint firstItem="JuA-7A-q4d" firstAttribute="top" secondItem="qk4-3W-uha" secondAttribute="bottom" constant="20" id="rvV-Aj-iie"/>
                             <constraint firstItem="ldf-bZ-igS" firstAttribute="top" secondItem="5LJ-tG-AjJ" secondAttribute="top" id="xzV-Sb-ZkH"/>
                         </constraints>
                     </view>
@@ -101,10 +135,10 @@
             </objects>
             <point key="canvasLocation" x="979.71014492753636" y="801.5625"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--AddViewController-->
         <scene sceneID="Xj9-R4-4Ed">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VY6-Tf-Rne" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AddViewController" title="AddViewController" automaticallyAdjustsScrollViewInsets="NO" id="VY6-Tf-Rne" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="cng-b3-pxr">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -130,7 +164,7 @@
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <namedColor name="DrugBackgroundGrey">
-            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="DrugDarkBlue">
             <color red="0.125" green="0.27799999713897705" blue="0.3059999942779541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

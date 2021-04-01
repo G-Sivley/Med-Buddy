@@ -18,9 +18,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="xcs-hQ-5bO">
-                        <rect key="frame" x="30" y="25" width="641" height="320"/>
+                        <rect key="frame" x="30" y="10" width="641" height="320"/>
                         <color key="backgroundColor" name="DrugBackgroundGrey"/>
-                        <color key="tintColor" name="DrugGreen"/>
+                        <color key="tintColor" name="AccentColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="320" id="hXe-Dc-Q5i"/>
                         </constraints>
@@ -32,7 +32,7 @@
                 <color key="backgroundColor" name="DrugBackgroundGrey"/>
                 <constraints>
                     <constraint firstItem="xcs-hQ-5bO" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="02p-hG-cbl"/>
-                    <constraint firstItem="xcs-hQ-5bO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="ESs-cu-UPF"/>
+                    <constraint firstItem="xcs-hQ-5bO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="ESs-cu-UPF"/>
                     <constraint firstItem="xcs-hQ-5bO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="THx-WH-JCf"/>
                     <constraint firstAttribute="trailing" secondItem="xcs-hQ-5bO" secondAttribute="trailing" constant="30" id="k9B-U1-u4C"/>
                 </constraints>
@@ -43,11 +43,11 @@
         </tableViewCell>
     </objects>
     <resources>
-        <namedColor name="DrugBackgroundGrey">
-            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="AccentColor">
+            <color red="0.36078431372549019" green="0.59607843137254901" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="DrugGreen">
-            <color red="0.36100000143051147" green="0.59600001573562622" blue="0.49399998784065247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="DrugBackgroundGrey">
+            <color red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

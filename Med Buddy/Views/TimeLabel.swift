@@ -15,9 +15,9 @@ class TimeLabel: UILabel {
         /// Margin from right anchor of safe area to right anchor of Image
         static let ImageRightMargin: CGFloat = 16
         /// Margin from bottom anchor of NavBar to bottom anchor of Image for Large NavBar state
-        static let ImageBottomMarginForLargeState: CGFloat = 12
+        static let ImageBottomMarginForLargeState: CGFloat = 5
         /// Margin from bottom anchor of NavBar to bottom anchor of Image for Small NavBar state
-        static let ImageBottomMarginForSmallState: CGFloat = 12
+        static let ImageBottomMarginForSmallState: CGFloat = 17
         /// Image height/width for Small NavBar state
         static let ImageSizeForSmallState: CGFloat = 22
         /// Height of NavBar for Small state. Usually it's just 44
@@ -25,20 +25,20 @@ class TimeLabel: UILabel {
         /// Height of NavBar for Large state. Usually it's just 96.5 but if you have a custom font for the title, please make sure to edit this value since it changes the height for Large state of NavBar
         static let NavBarHeightLargeState: CGFloat = 96.5
         
-        static let NavBarFontLargeState: CGFloat = 36
+        static let NavBarFontLargeState: CGFloat = 24
         static let NavBarFontSmallState: CGFloat = 16
         
     }
     
-    func setupTimeLabel(on navBar: UINavigationBar) {
+    func setupTimeLabel(on navBar: UINavigationBar, labelText: String = "3:33 PM" ) {
         frame = CGRect(x: 0, y: 0, width: 130, height: 43)
         
         backgroundColor = .clear
         
-        textColor = UIColor(named: K.Colors.drugDarkBlue)
+        textColor = .black
         
-        font = UIFont(name: "Quicksand-Regular", size: Const.NavBarFontLargeState)
-        attributedText = NSMutableAttributedString(string: "3:33 PM", attributes: [NSAttributedString.Key.kern: -1.8])
+        font = UIFont.systemFont(ofSize: Const.NavBarFontLargeState, weight: .light)
+        text = labelText
         // Initial setup for image for Large NavBar state since the the screen always has Large NavBar once it gets opened
         navBar.addSubview(self)
         

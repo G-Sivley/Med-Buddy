@@ -14,7 +14,6 @@
 		9021B04E2612A1800012363A /* MedList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9021B04C2612A1800012363A /* MedList.storyboard */; };
 		9021B0522612A1AC0012363A /* AddMed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9021B0502612A1AC0012363A /* AddMed.storyboard */; };
 		9021B0562612A3030012363A /* Symptoms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9021B0542612A3030012363A /* Symptoms.storyboard */; };
-		9021B05A2612A3180012363A /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9021B0582612A3180012363A /* More.storyboard */; };
 		90233F192608F3780033221A /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90233F182608F3780033221A /* ViewControllerExtension.swift */; };
 		904E46A42607C2E500E79643 /* MedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E46A32607C2E500E79643 /* MedListViewController.swift */; };
 		905BAF8C26101D2500EDF78B /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905BAF8B26101D2500EDF78B /* ScheduleTableViewController.swift */; };
@@ -38,7 +37,8 @@
 		90EA099926072BD900CABE30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90EA099726072BD900CABE30 /* Main.storyboard */; };
 		90EA099B26072BDD00CABE30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90EA099A26072BDD00CABE30 /* Assets.xcassets */; };
 		90EA099E26072BDD00CABE30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90EA099C26072BDD00CABE30 /* LaunchScreen.storyboard */; };
-		90F102592607E65200CF50BE /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F102582607E65200CF50BE /* CustomTabBarViewController.swift */; };
+		90FA5F8D261561360042B573 /* AddMedButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FA5F8B261561360042B573 /* AddMedButtonTableViewCell.swift */; };
+		90FA5F8E261561360042B573 /* AddMedButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90FA5F8C261561360042B573 /* AddMedButtonTableViewCell.xib */; };
 		AF5238A463190E84D5F02608 /* Pods_Med_Buddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC1997D0DB147D602359294A /* Pods_Med_Buddy.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +52,6 @@
 		9021B04D2612A1800012363A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MedList.storyboard; sourceTree = "<group>"; };
 		9021B0512612A1AC0012363A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AddMed.storyboard; sourceTree = "<group>"; };
 		9021B0552612A3030012363A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Symptoms.storyboard; sourceTree = "<group>"; };
-		9021B0592612A3180012363A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/More.storyboard; sourceTree = "<group>"; };
 		90233F182608F3780033221A /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		904E46A32607C2E500E79643 /* MedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedListViewController.swift; sourceTree = "<group>"; };
 		905BAF8B26101D2500EDF78B /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
@@ -78,7 +77,8 @@
 		90EA099A26072BDD00CABE30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90EA099D26072BDD00CABE30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		90EA099F26072BDD00CABE30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		90F102582607E65200CF50BE /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
+		90FA5F8B261561360042B573 /* AddMedButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedButtonTableViewCell.swift; sourceTree = "<group>"; };
+		90FA5F8C261561360042B573 /* AddMedButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMedButtonTableViewCell.xib; sourceTree = "<group>"; };
 		CC1997D0DB147D602359294A /* Pods_Med_Buddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Med_Buddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -102,23 +102,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		900B7344260D932D003A1703 /* TabBar Controller */ = {
-			isa = PBXGroup;
-			children = (
-				90F102582607E65200CF50BE /* CustomTabBarViewController.swift */,
-			);
-			path = "TabBar Controller";
-			sourceTree = "<group>";
-		};
 		900B7345260D9352003A1703 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9021B0582612A3180012363A /* More.storyboard */,
+				904186AA2615917900A94772 /* Launch Screen */,
+				90EA099726072BD900CABE30 /* Main.storyboard */,
+				906EFA172612A0FF006A3647 /* Schedule.storyboard */,
+				9021B04C2612A1800012363A /* MedList.storyboard */,
 				9021B0542612A3030012363A /* Symptoms.storyboard */,
 				9021B0502612A1AC0012363A /* AddMed.storyboard */,
-				9021B04C2612A1800012363A /* MedList.storyboard */,
-				906EFA172612A0FF006A3647 /* Schedule.storyboard */,
-				90EA099726072BD900CABE30 /* Main.storyboard */,
 				907812F026112C2700EB59ED /* TimeLabel.swift */,
 			);
 			path = Views;
@@ -157,6 +149,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		904186AA2615917900A94772 /* Launch Screen */ = {
+			isa = PBXGroup;
+			children = (
+				90EA099C26072BDD00CABE30 /* LaunchScreen.storyboard */,
+			);
+			path = "Launch Screen";
+			sourceTree = "<group>";
+		};
 		904E46A62607C32700E79643 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +175,7 @@
 				900EE04C261017C00053D892 /* Calendar Cell */,
 				900B734C260D939A003A1703 /* Medication Cell */,
 				907812FB261146BA00EB59ED /* TimeOfDay Cell */,
+				90FA5F90261561400042B573 /* Add Med Button Cell */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -211,13 +212,11 @@
 			children = (
 				90EA099126072BD900CABE30 /* AppDelegate.swift */,
 				90EA099326072BD900CABE30 /* SceneDelegate.swift */,
-				900B7344260D932D003A1703 /* TabBar Controller */,
 				907812F32611463E00EB59ED /* Custom Cells */,
 				900B7346260D935E003A1703 /* Models */,
 				900B7345260D9352003A1703 /* Views */,
 				904E46A62607C32700E79643 /* Controllers */,
 				90EA099A26072BDD00CABE30 /* Assets.xcassets */,
-				90EA099C26072BDD00CABE30 /* LaunchScreen.storyboard */,
 				90EA099F26072BDD00CABE30 /* Info.plist */,
 				90D3AA6D2607ED8300894F33 /* Constants.swift */,
 				90233F1B2608F37E0033221A /* Extensions */,
@@ -238,6 +237,15 @@
 				90B383C1260731D3003EF110 /* Quicksand Regular.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		90FA5F90261561400042B573 /* Add Med Button Cell */ = {
+			isa = PBXGroup;
+			children = (
+				90FA5F8B261561360042B573 /* AddMedButtonTableViewCell.swift */,
+				90FA5F8C261561360042B573 /* AddMedButtonTableViewCell.xib */,
+			);
+			path = "Add Med Button Cell";
 			sourceTree = "<group>";
 		};
 		A9A956AFB4B51A2F9D8DE832 /* Pods */ = {
@@ -308,7 +316,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				900B734A260D9392003A1703 /* MedicationTableViewCell.xib in Resources */,
-				9021B05A2612A3180012363A /* More.storyboard in Resources */,
 				90B383C6260731D4003EF110 /* Quicksand Dash.otf in Resources */,
 				90B383C7260731D4003EF110 /* Quicksand Bold.otf in Resources */,
 				9021B04E2612A1800012363A /* MedList.storyboard in Resources */,
@@ -316,6 +323,7 @@
 				90B383C5260731D4003EF110 /* Quicksand BoldItalic.otf in Resources */,
 				90B383CB260731D4003EF110 /* Quicksand Italic.otf in Resources */,
 				9021B0522612A1AC0012363A /* AddMed.storyboard in Resources */,
+				90FA5F8E261561360042B573 /* AddMedButtonTableViewCell.xib in Resources */,
 				907812F9261146B400EB59ED /* TimeOfDayCell.xib in Resources */,
 				906EFA192612A0FF006A3647 /* Schedule.storyboard in Resources */,
 				90EA099B26072BDD00CABE30 /* Assets.xcassets in Resources */,
@@ -362,12 +370,12 @@
 			files = (
 				907812F126112C2700EB59ED /* TimeLabel.swift in Sources */,
 				90B8159B26085A2C008E52F4 /* MoreViewController.swift in Sources */,
+				90FA5F8D261561360042B573 /* AddMedButtonTableViewCell.swift in Sources */,
 				90EA099226072BD900CABE30 /* AppDelegate.swift in Sources */,
 				90D3AA6E2607ED8300894F33 /* Constants.swift in Sources */,
 				907812F8261146B400EB59ED /* TimeOfDayCell.swift in Sources */,
 				90B8159826085A08008E52F4 /* SymptomsViewController.swift in Sources */,
 				90B8159326084FA9008E52F4 /* AddViewController.swift in Sources */,
-				90F102592607E65200CF50BE /* CustomTabBarViewController.swift in Sources */,
 				90EA099426072BD900CABE30 /* SceneDelegate.swift in Sources */,
 				904E46A42607C2E500E79643 /* MedListViewController.swift in Sources */,
 				905BAF8C26101D2500EDF78B /* ScheduleTableViewController.swift in Sources */,
@@ -402,14 +410,6 @@
 				9021B0552612A3030012363A /* Base */,
 			);
 			name = Symptoms.storyboard;
-			sourceTree = "<group>";
-		};
-		9021B0582612A3180012363A /* More.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9021B0592612A3180012363A /* Base */,
-			);
-			name = More.storyboard;
 			sourceTree = "<group>";
 		};
 		906EFA172612A0FF006A3647 /* Schedule.storyboard */ = {
