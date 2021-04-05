@@ -25,7 +25,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qk4-3W-uha" userLabel="ImageContainerView">
                                 <rect key="frame" x="157" y="214" width="100" height="100"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s7p-fF-9Ah">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s7p-fF-9Ah">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1k-A6-RzW">
@@ -85,16 +85,10 @@
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="haz-50-Zf5">
                                 <rect key="frame" x="0.0" y="394" width="414" height="502"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="medicationOptionsCell" id="xwV-XR-P3H">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xwV-XR-P3H" id="tcC-oN-svn">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="t2k-We-U2E" id="y0g-4j-Oa3"/>
+                                    <outlet property="delegate" destination="t2k-We-U2E" id="60m-cn-Aoa"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5LJ-tG-AjJ"/>
@@ -123,12 +117,16 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="aca-n0-2KQ">
                             <color key="tintColor" name="DrugDarkBlue"/>
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="t2k-We-U2E" id="l1Q-oR-9oo"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="imageContainerView" destination="qk4-3W-uha" id="fve-qC-xke"/>
                         <outlet property="imageLabel" destination="x1k-A6-RzW" id="l4X-Zl-4vo"/>
                         <outlet property="medImage" destination="s7p-fF-9Ah" id="eTg-8x-Xkq"/>
+                        <outlet property="settingTableView" destination="haz-50-Zf5" id="i1X-Pi-4Fy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="unI-Wi-wcV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

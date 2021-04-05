@@ -19,6 +19,8 @@ struct K {
         static let medicationOptionssCell = "medicationOptionsCell"
         static let addMedNib = "AddMedButtonTableViewCell"
         static let addMedCell = "addMed"
+        static let medSettingNib = "MedSettingTableViewCell"
+        static let medSettingCell = "medSetting"
     }
     
     struct Colors {

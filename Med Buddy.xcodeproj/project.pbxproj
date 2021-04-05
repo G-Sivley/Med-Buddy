@@ -21,6 +21,8 @@
 		907812F126112C2700EB59ED /* TimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907812F026112C2700EB59ED /* TimeLabel.swift */; };
 		907812F8261146B400EB59ED /* TimeOfDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907812F6261146B400EB59ED /* TimeOfDayCell.swift */; };
 		907812F9261146B400EB59ED /* TimeOfDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 907812F7261146B400EB59ED /* TimeOfDayCell.xib */; };
+		90790B13261B9D19001015DE /* MedSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90790B11261B9D19001015DE /* MedSettingTableViewCell.swift */; };
+		90790B14261B9D19001015DE /* MedSettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90790B12261B9D19001015DE /* MedSettingTableViewCell.xib */; };
 		90B383C5260731D4003EF110 /* Quicksand BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 90B383BE260731D3003EF110 /* Quicksand BoldItalic.otf */; };
 		90B383C6260731D4003EF110 /* Quicksand Dash.otf in Resources */ = {isa = PBXBuildFile; fileRef = 90B383BF260731D3003EF110 /* Quicksand Dash.otf */; };
 		90B383C7260731D4003EF110 /* Quicksand Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 90B383C0260731D3003EF110 /* Quicksand Bold.otf */; };
@@ -59,6 +61,8 @@
 		907812F026112C2700EB59ED /* TimeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLabel.swift; sourceTree = "<group>"; };
 		907812F6261146B400EB59ED /* TimeOfDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeOfDayCell.swift; sourceTree = "<group>"; };
 		907812F7261146B400EB59ED /* TimeOfDayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeOfDayCell.xib; sourceTree = "<group>"; };
+		90790B11261B9D19001015DE /* MedSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedSettingTableViewCell.swift; sourceTree = "<group>"; };
+		90790B12261B9D19001015DE /* MedSettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedSettingTableViewCell.xib; sourceTree = "<group>"; };
 		90B383BE260731D3003EF110 /* Quicksand BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand BoldItalic.otf"; sourceTree = "<group>"; };
 		90B383BF260731D3003EF110 /* Quicksand Dash.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand Dash.otf"; sourceTree = "<group>"; };
 		90B383C0260731D3003EF110 /* Quicksand Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand Bold.otf"; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 				900B734C260D939A003A1703 /* Medication Cell */,
 				907812FB261146BA00EB59ED /* TimeOfDay Cell */,
 				90FA5F90261561400042B573 /* Add Med Button Cell */,
+				90790B16261B9D1E001015DE /* Med Setting */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -187,6 +192,15 @@
 				907812F7261146B400EB59ED /* TimeOfDayCell.xib */,
 			);
 			path = "TimeOfDay Cell";
+			sourceTree = "<group>";
+		};
+		90790B16261B9D1E001015DE /* Med Setting */ = {
+			isa = PBXGroup;
+			children = (
+				90790B11261B9D19001015DE /* MedSettingTableViewCell.swift */,
+				90790B12261B9D19001015DE /* MedSettingTableViewCell.xib */,
+			);
+			path = "Med Setting";
 			sourceTree = "<group>";
 		};
 		90EA098526072BD900CABE30 = {
@@ -319,6 +333,7 @@
 				90B383C6260731D4003EF110 /* Quicksand Dash.otf in Resources */,
 				90B383C7260731D4003EF110 /* Quicksand Bold.otf in Resources */,
 				9021B04E2612A1800012363A /* MedList.storyboard in Resources */,
+				90790B14261B9D19001015DE /* MedSettingTableViewCell.xib in Resources */,
 				90EA099E26072BDD00CABE30 /* LaunchScreen.storyboard in Resources */,
 				90B383C5260731D4003EF110 /* Quicksand BoldItalic.otf in Resources */,
 				90B383CB260731D4003EF110 /* Quicksand Italic.otf in Resources */,
@@ -378,6 +393,7 @@
 				90B8159326084FA9008E52F4 /* AddViewController.swift in Sources */,
 				90EA099426072BD900CABE30 /* SceneDelegate.swift in Sources */,
 				904E46A42607C2E500E79643 /* MedListViewController.swift in Sources */,
+				90790B13261B9D19001015DE /* MedSettingTableViewCell.swift in Sources */,
 				905BAF8C26101D2500EDF78B /* ScheduleTableViewController.swift in Sources */,
 				900B7349260D9392003A1703 /* MedicationTableViewCell.swift in Sources */,
 				90233F192608F3780033221A /* ViewControllerExtension.swift in Sources */,
