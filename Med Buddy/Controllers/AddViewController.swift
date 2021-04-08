@@ -14,7 +14,7 @@ class AddViewController: UIViewController, UINavigationControllerDelegate{
     @IBOutlet weak var imageContainerView: UIView!
     @IBOutlet weak var settingTableView: UITableView!
     
-    let imagepicker = UIImagePickerController()
+    let imagePicker = UIImagePickerController()
     var imagePresent = ImagePresent.needImage
     
     override func viewDidLoad() {
@@ -61,14 +61,14 @@ class AddViewController: UIViewController, UINavigationControllerDelegate{
         applyImageAppearance()
         
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
-            imagepicker.delegate = self;
-            imagepicker.modalTransitionStyle = .flipHorizontal
-            imagepicker.allowsEditing = true
-            imagepicker.sourceType = .camera
-            imagepicker.mediaTypes = ["public.image"]
-            imagepicker.cameraCaptureMode = .photo
-            imagepicker.cameraDevice = .rear
-            self.present(imagepicker, animated: true) { () -> Void in
+            imagePicker.delegate = self;
+            imagePicker.modalTransitionStyle = .flipHorizontal
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = .camera
+            imagePicker.mediaTypes = ["public.image"]
+            imagePicker.cameraCaptureMode = .photo
+            imagePicker.cameraDevice = .rear
+            self.present(imagePicker, animated: true) { () -> Void in
             }
             
         }
@@ -92,15 +92,18 @@ class AddViewController: UIViewController, UINavigationControllerDelegate{
 extension AddViewController: UIImagePickerControllerDelegate {
    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+    
+        
+        let image = info[UIImagePickerController.InfoKey.editedImage] as! UIImage
         medImage.image = image
-        imagepicker.dismiss(animated: true, completion: nil)
+        
+        imagePicker.dismiss(animated: true, completion: nil)
     }
 }
 
 //MARK: - Table Data
 
-extension AddViewController: UITableViewDataSource {
+extension AddViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
