@@ -22,8 +22,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="gyO-hl-w2i" kind="relationship" relationship="viewControllers" id="s1b-5d-715"/>
-                        <segue destination="5JM-ma-fps" kind="relationship" relationship="viewControllers" id="0c4-xK-odF"/>
-                        <segue destination="9dG-Eq-PeL" kind="relationship" relationship="viewControllers" id="BKF-JH-cjp"/>
+                        <segue destination="5JM-ma-fps" kind="relationship" relationship="viewControllers" id="BiA-CJ-c42"/>
+                        <segue destination="9dG-Eq-PeL" kind="relationship" relationship="viewControllers" id="0Mi-gO-QAA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OfG-EU-3DR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -44,7 +44,7 @@
         <scene sceneID="JeU-dG-u1D">
             <objects>
                 <viewControllerPlaceholder storyboardName="MedList" id="5JM-ma-fps" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="m5o-YT-hYv"/>
+                    <tabBarItem key="tabBarItem" title="" image="pills.fill" catalog="system" selectedImage="pills.fill" id="m5o-YT-hYv"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GMl-pg-1jO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -62,6 +62,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="pills.fill" catalog="system" width="128" height="106"/>
         <namedColor name="AccentColor">
             <color red="0.36078431372549019" green="0.59607843137254901" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

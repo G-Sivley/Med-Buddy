@@ -1,37 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qLm-wc-24M">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dSH-TW-ckD">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Med List View Controller-->
-        <scene sceneID="0Vj-lt-K5x">
+        <!--Medication List-->
+        <scene sceneID="PUf-zn-i9Q">
             <objects>
-                <viewController id="qLm-wc-24M" customClass="MedListViewController" customModule="Med_Buddy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="a00-GB-at4">
+                <tableViewController id="ttE-BK-iTD" customClass="MedListTableViewController" customModule="Med_Buddy" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Rmk-Dl-UyC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="fht-Ek-Jh4"/>
-                        <color key="backgroundColor" name="DrugBackgroundGrey"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" selectedImage="pills.fill" catalog="system" id="Toc-dU-ngs">
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="ttE-BK-iTD" id="kfX-8J-tNM"/>
+                            <outlet property="delegate" destination="ttE-BK-iTD" id="wHN-gS-rEg"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="" selectedImage="pills.fill" catalog="system" id="xcd-TY-Wzs">
                         <imageReference key="image" image="pills.fill" catalog="system" symbolScale="large"/>
                     </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dHb-Pk-w7K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                    <navigationItem key="navigationItem" title="Medication List" id="Xye-Oi-D0j"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gwE-GV-f5p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-759.4202898550725" y="156.69642857142856"/>
+            <point key="canvasLocation" x="1071.0144927536232" y="46.875"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="r1x-PS-Dl7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dSH-TW-ckD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Ws8-XS-zEZ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ttE-BK-iTD" kind="relationship" relationship="rootViewController" id="SQD-I4-jIw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jjv-U0-nCp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="160.86956521739131" y="46.875"/>
         </scene>
     </scenes>
     <resources>
         <image name="pills.fill" catalog="system" width="128" height="106"/>
-        <namedColor name="DrugBackgroundGrey">
-            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
