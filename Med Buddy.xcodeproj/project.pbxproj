@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -39,6 +39,8 @@
 		90EA099926072BD900CABE30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90EA099726072BD900CABE30 /* Main.storyboard */; };
 		90EA099B26072BDD00CABE30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90EA099A26072BDD00CABE30 /* Assets.xcassets */; };
 		90EA099E26072BDD00CABE30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90EA099C26072BDD00CABE30 /* LaunchScreen.storyboard */; };
+		90F517B8262E296800D9811B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90F517B7262E296700D9811B /* GoogleService-Info.plist */; };
+		90F517D2262E97DB00D9811B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F517D1262E97DB00D9811B /* SettingViewController.swift */; };
 		90FA5F8D261561360042B573 /* AddMedButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FA5F8B261561360042B573 /* AddMedButtonTableViewCell.swift */; };
 		90FA5F8E261561360042B573 /* AddMedButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90FA5F8C261561360042B573 /* AddMedButtonTableViewCell.xib */; };
 		AF5238A463190E84D5F02608 /* Pods_Med_Buddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC1997D0DB147D602359294A /* Pods_Med_Buddy.framework */; };
@@ -81,6 +83,8 @@
 		90EA099A26072BDD00CABE30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90EA099D26072BDD00CABE30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		90EA099F26072BDD00CABE30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90F517B7262E296700D9811B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		90F517D1262E97DB00D9811B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		90FA5F8B261561360042B573 /* AddMedButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedButtonTableViewCell.swift; sourceTree = "<group>"; };
 		90FA5F8C261561360042B573 /* AddMedButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMedButtonTableViewCell.xib; sourceTree = "<group>"; };
 		CC1997D0DB147D602359294A /* Pods_Med_Buddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Med_Buddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +171,7 @@
 				905BAF8B26101D2500EDF78B /* ScheduleTableViewController.swift */,
 				905B442926292F4500F03E5C /* MedListTableViewController.swift */,
 				90B8159226084FA9008E52F4 /* AddViewController.swift */,
+				90F517D1262E97DB00D9811B /* SettingViewController.swift */,
 				90B8159726085A08008E52F4 /* SymptomsViewController.swift */,
 				90B8159A26085A2C008E52F4 /* MoreViewController.swift */,
 			);
@@ -232,6 +237,7 @@
 				904E46A62607C32700E79643 /* Controllers */,
 				90EA099A26072BDD00CABE30 /* Assets.xcassets */,
 				90EA099F26072BDD00CABE30 /* Info.plist */,
+				90F517B7262E296700D9811B /* GoogleService-Info.plist */,
 				90D3AA6D2607ED8300894F33 /* Constants.swift */,
 				90233F1B2608F37E0033221A /* Extensions */,
 				90EA09BB26072C6900CABE30 /* Fonts */,
@@ -282,6 +288,7 @@
 				90EA098A26072BD900CABE30 /* Sources */,
 				90EA098B26072BD900CABE30 /* Frameworks */,
 				90EA098C26072BD900CABE30 /* Resources */,
+				481FD88AD34558C818C525A7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -336,6 +343,7 @@
 				90790B14261B9D19001015DE /* MedSettingTableViewCell.xib in Resources */,
 				90EA099E26072BDD00CABE30 /* LaunchScreen.storyboard in Resources */,
 				90B383C5260731D4003EF110 /* Quicksand BoldItalic.otf in Resources */,
+				90F517B8262E296800D9811B /* GoogleService-Info.plist in Resources */,
 				90B383CB260731D4003EF110 /* Quicksand Italic.otf in Resources */,
 				9021B0522612A1AC0012363A /* AddMed.storyboard in Resources */,
 				90FA5F8E261561360042B573 /* AddMedButtonTableViewCell.xib in Resources */,
@@ -354,6 +362,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		481FD88AD34558C818C525A7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Med Buddy/Pods-Med Buddy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Med Buddy/Pods-Med Buddy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Med Buddy/Pods-Med Buddy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B94D9F156BF77B948DA353B0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -386,6 +411,7 @@
 				907812F126112C2700EB59ED /* TimeLabel.swift in Sources */,
 				90B8159B26085A2C008E52F4 /* MoreViewController.swift in Sources */,
 				90FA5F8D261561360042B573 /* AddMedButtonTableViewCell.swift in Sources */,
+				90F517D2262E97DB00D9811B /* SettingViewController.swift in Sources */,
 				90EA099226072BD900CABE30 /* AppDelegate.swift in Sources */,
 				90D3AA6E2607ED8300894F33 /* Constants.swift in Sources */,
 				907812F8261146B400EB59ED /* TimeOfDayCell.swift in Sources */,

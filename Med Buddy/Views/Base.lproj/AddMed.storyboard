@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -127,11 +128,28 @@
                         <outlet property="imageLabel" destination="x1k-A6-RzW" id="l4X-Zl-4vo"/>
                         <outlet property="medImage" destination="s7p-fF-9Ah" id="eTg-8x-Xkq"/>
                         <outlet property="settingTableView" destination="haz-50-Zf5" id="i1X-Pi-4Fy"/>
+                        <segue destination="far-PW-3pf" kind="show" identifier="showSettings" id="Re8-Ib-yu9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="unI-Wi-wcV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="979.71014492753636" y="801.5625"/>
+        </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="cRL-Au-cU9">
+            <objects>
+                <viewController id="far-PW-3pf" customClass="SettingViewController" customModule="Med_Buddy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eqC-wl-hPX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="HWG-nf-RXb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hdw-aT-wQZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6qA-Wo-fbP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1755" y="802"/>
         </scene>
         <!--AddViewController-->
         <scene sceneID="Xj9-R4-4Ed">
@@ -170,5 +188,8 @@
         <namedColor name="DrugWhite">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

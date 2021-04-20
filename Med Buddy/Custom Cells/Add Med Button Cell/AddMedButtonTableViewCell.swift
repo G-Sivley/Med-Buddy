@@ -24,10 +24,10 @@ class AddMedButtonTableViewCell: UITableViewCell {
         //addMedButton.layer.cornerRadius = addMedButton.frame.height / 2
         addMedButton.layer.cornerRadius = 40 / 2
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     

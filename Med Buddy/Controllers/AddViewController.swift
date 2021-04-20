@@ -26,6 +26,8 @@ class AddViewController: UIViewController, UINavigationControllerDelegate{
         // Do any additional setup after loading the view.
         makeImageCircular()
         addShadow(view: imageContainerView, opacity: 0.4, offset: CGSize(width: -4, height: 4), radius: 4)
+        
+        settingTableView.delegate = self
     }
 
     enum ImagePresent {
@@ -48,12 +50,13 @@ class AddViewController: UIViewController, UINavigationControllerDelegate{
         dismiss(animated: true, completion: nil)
     }
     
-    //    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        // Get the new view controller using segue.destination.
-    //        // Pass the selected object to the new view controller.
-    //    }
+//        // In a storyboard-based application, you will often want to do a little preparation before navigation
+//        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//            // Get the new view controller using segue.destination.
+//            // Pass the selected object to the new view controller.
+//        }
 
+  
     //MARK: - Button Pressed Methods
     
     @IBAction func addImagePressed(_ sender: UIButton) {
@@ -119,4 +122,16 @@ extension AddViewController: UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "showSettings", sender: self)
+        // Change this to pass in
+        
+        
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
+    
 }

@@ -34,15 +34,12 @@ class ScheduleTableViewController: UITableViewController  {
         // Setup for standard title
         let standardAppearance = UINavigationBarAppearance()
         standardAppearance.configureWithOpaqueBackground()
-//        navBarAppearance.backgroundColor = UIColor(named: K.Colors.drugBackgroundGrey)
         standardAppearance.backgroundColor = UIColor(named: K.Colors.drugBackgroundGrey)
     
         if let navigationBar = self.navigationController?.navigationBar {
             navigationBar.standardAppearance = standardAppearance
             navigationBar.scrollEdgeAppearance = navBarAppearance
             timeLabel.setupTimeLabel(on: navigationBar)
-            
-            // addShadow(view: navigationBar)
         }
     }
     
@@ -156,7 +153,6 @@ class ScheduleTableViewController: UITableViewController  {
         // Pass the selected object to the new view controller.
     }
     */
-    
     //MARK: - Scroll Methods
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard let height = navigationController?.navigationBar.frame.height else { return }
