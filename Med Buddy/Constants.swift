@@ -34,6 +34,7 @@ struct K {
     
     struct Segue {
         static let addMedSegue = "addMed"
+        static let showSettings = "showSettings"
     }
         
     

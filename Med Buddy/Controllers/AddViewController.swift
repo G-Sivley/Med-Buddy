@@ -17,6 +17,8 @@ class AddViewController: UIViewController, UINavigationControllerDelegate{
     let imagePicker = UIImagePickerController()
     var imagePresent = ImagePresent.needImage
     
+    var settingsArray: [(title: String, detail: String)] = [("Dose", "20 mg"), ("Frequency", "Twice Daily"), ("Time and Dose", "X 1"), ("Indication", "Depression")]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,12 +52,27 @@ class AddViewController: UIViewController, UINavigationControllerDelegate{
         dismiss(animated: true, completion: nil)
     }
     
-//        // In a storyboard-based application, you will often want to do a little preparation before navigation
-//        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//            // Get the new view controller using segue.destination.
-//            // Pass the selected object to the new view controller.
-//        }
+        // In a storyboard-based application, you will often want to do a little preparation before navigation
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            // Get the new view controller using segue.destination.
+            // Pass the selected object to the new view controller.
+            if segue.identifier == K.Segue.showSettings {
+                if let destinationVC = segue.destination as? SettingViewController {
+                    if let indexPath = self.settingTableView.indexPathForSelectedRow {
+                        destinationVC.settingTitle = settingsArray[indexPath.row].title
+                        
+                    }
+                }
+                
+            }
+        }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: K.Segue.showSettings, sender: self)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
   
     //MARK: - Button Pressed Methods
     
@@ -114,24 +131,13 @@ extension AddViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let settings: [(title: String, detail: String)] = [("Dose", "20 mg"), ("Frequency", "Twice Daily"), ("Time and Dose", "X 1"), ("Indication", "Depression")]
+        
         let cell = settingTableView.dequeueReusableCell(withIdentifier: K.Cells.medSettingCell) as! MedSettingTableViewCell
         
-        cell.titleLabel.text = settings[indexPath.row].title
-        cell.accessoryLabel.text = settings[indexPath.row].detail
+        cell.titleLabel.text = settingsArray[indexPath.row].title
+        cell.accessoryLabel.text = settingsArray[indexPath.row].detail
         
         return cell
-    }
-    
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "showSettings", sender: self)
-        // Change this to pass in
-        
-        
-        
-        tableView.deselectRow(at: indexPath, animated: true)
-        
     }
     
 }

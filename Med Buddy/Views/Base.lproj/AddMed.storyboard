@@ -84,7 +84,7 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="haz-50-Zf5">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="haz-50-Zf5">
                                 <rect key="frame" x="0.0" y="394" width="414" height="502"/>
                                 <connections>
                                     <outlet property="dataSource" destination="t2k-We-U2E" id="y0g-4j-Oa3"/>
@@ -128,7 +128,7 @@
                         <outlet property="imageLabel" destination="x1k-A6-RzW" id="l4X-Zl-4vo"/>
                         <outlet property="medImage" destination="s7p-fF-9Ah" id="eTg-8x-Xkq"/>
                         <outlet property="settingTableView" destination="haz-50-Zf5" id="i1X-Pi-4Fy"/>
-                        <segue destination="far-PW-3pf" kind="show" identifier="showSettings" id="Re8-Ib-yu9"/>
+                        <segue destination="far-PW-3pf" kind="show" identifier="showSettings" id="2WI-62-nVJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="unI-Wi-wcV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

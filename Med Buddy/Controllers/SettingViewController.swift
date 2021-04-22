@@ -9,9 +9,14 @@ import UIKit
 
 class SettingViewController: UIViewController {
 
+    var settingTitle: String?
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        title = settingTitle
         // Do any additional setup after loading the view.
     }
     
