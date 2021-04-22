@@ -59,6 +59,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" name="DrugBackgroundGrey"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="dEd-r5-Ycy" secondAttribute="bottom" id="8Zw-Xn-dxk"/>
                     <constraint firstItem="dEd-r5-Ycy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="Ogk-ca-zVi"/>

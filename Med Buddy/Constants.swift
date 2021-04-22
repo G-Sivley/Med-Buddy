@@ -27,7 +27,6 @@ struct K {
         static let accent = "AccentColor"
         static let drugBackgroundGrey = "DrugBackgroundGrey"
         static let drugDarkBlue = "DrugDarkBlue"
-        static let drugGreen = "DrugGreen"
         static let drugOrange = "DrugOrange"
         static let drugWhite = "DrugWhite"
     }

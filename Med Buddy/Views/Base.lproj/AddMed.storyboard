@@ -144,6 +144,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="HWG-nf-RXb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" name="DrugDarkBlue"/>
                     </view>
                     <navigationItem key="navigationItem" id="hdw-aT-wQZ"/>
                 </viewController>

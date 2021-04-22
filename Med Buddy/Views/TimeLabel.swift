@@ -35,7 +35,7 @@ class TimeLabel: UILabel {
         
         backgroundColor = .clear
         
-        textColor = .black
+        textColor = .label
         
         font = UIFont.systemFont(ofSize: Const.NavBarFontLargeState, weight: .light)
         text = labelText
