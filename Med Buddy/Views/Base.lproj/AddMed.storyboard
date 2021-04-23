@@ -37,7 +37,7 @@
                                         <attributedString key="attributedText">
                                             <fragment content="Add Image">
                                                 <attributes>
-                                                    <color key="NSColor" name="DrugDarkBlue"/>
+                                                    <color key="NSColor" systemColor="labelColor"/>
                                                     <font key="NSFont" size="18" name="Quicksand-Regular"/>
                                                     <font key="NSOriginalFont" size="18" name="Quicksand-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -86,6 +86,8 @@
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="haz-50-Zf5">
                                 <rect key="frame" x="0.0" y="394" width="414" height="502"/>
+                                <color key="backgroundColor" name="DrugBackgroundGrey"/>
+                                <color key="sectionIndexBackgroundColor" name="DrugBackgroundGrey"/>
                                 <connections>
                                     <outlet property="dataSource" destination="t2k-We-U2E" id="y0g-4j-Oa3"/>
                                     <outlet property="delegate" destination="t2k-We-U2E" id="60m-cn-Aoa"/>
@@ -111,13 +113,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add Medication" id="iFc-jl-Gjb">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="arrow.backward" catalog="system" id="1cC-Co-7KE">
-                            <color key="tintColor" name="DrugDarkBlue"/>
+                            <color key="tintColor" name="AccentColor"/>
                             <connections>
                                 <action selector="backPressed:" destination="t2k-We-U2E" id="1SF-IL-Hj0"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="aca-n0-2KQ">
-                            <color key="tintColor" name="DrugDarkBlue"/>
+                            <color key="tintColor" name="AccentColor"/>
                             <connections>
                                 <action selector="saveButtonPressed:" destination="t2k-We-U2E" id="l1Q-oR-9oo"/>
                             </connections>
@@ -144,7 +146,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="HWG-nf-RXb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <color key="tintColor" name="DrugDarkBlue"/>
+                        <color key="tintColor" name="AccentColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="hdw-aT-wQZ"/>
                 </viewController>
@@ -161,12 +163,8 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="DrugBackgroundGrey"/>
-                        <color key="tintColor" name="DrugDarkBlue"/>
-                        <color key="barTintColor" name="DrugDarkBlue"/>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" name="DrugDarkBlue"/>
-                            <color key="textShadowColor" name="DrugDarkBlue"/>
-                        </textAttributes>
+                        <color key="tintColor" name="DrugBackgroundGrey"/>
+                        <color key="barTintColor" name="AccentColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -180,15 +178,18 @@
     </scenes>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <namedColor name="AccentColor">
+            <color red="0.36078431372549019" green="0.59607843137254901" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="DrugBackgroundGrey">
             <color red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="DrugDarkBlue">
-            <color red="0.125" green="0.27799999713897705" blue="0.3059999942779541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="DrugWhite">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

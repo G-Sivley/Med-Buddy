@@ -14,6 +14,8 @@ class MedListTableViewController: UITableViewController {
 
         let medicationCellNib = UINib.init(nibName: K.Cells.medicationNib, bundle: nil)
         self.tableView.register(medicationCellNib, forCellReuseIdentifier: K.Cells.medicationReusableCell)
+        
+        self.view.backgroundColor = UIColor(named: K.Colors.drugBackgroundGrey)
     }
 
     // MARK: - Table view data source

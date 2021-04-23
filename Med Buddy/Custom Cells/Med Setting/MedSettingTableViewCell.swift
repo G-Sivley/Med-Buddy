@@ -17,7 +17,7 @@ class MedSettingTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+        self.backgroundColor = UIColor(named: K.Colors.drugWhite)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
