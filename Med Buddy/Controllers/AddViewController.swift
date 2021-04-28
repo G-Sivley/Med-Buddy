@@ -21,7 +21,7 @@ class AddViewController: UIViewController, UINavigationControllerDelegate{
     
     var settingsArray: [(title: String, detail: String)] = [("Dose", "20 mg"), ("Frequency", "Twice Daily"), ("Time and Dose", "X 1"), ("Indication", "Depression")]
     
-    var docRef: DocumentReference!
+    var docRef: CollectionReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class AddViewController: UIViewController, UINavigationControllerDelegate{
         
         settingTableView.delegate = self
         
-        docRef = Firestore.firestore().collection("users").document("medications")
+        docRef = Firestore.firestore().collection("medications")
         
     }
 
@@ -105,8 +105,8 @@ class AddViewController: UIViewController, UINavigationControllerDelegate{
         // Save Info
         
         if let medName = medNameTextBox.text {
-            let dataToSave: [String: Any] = ["medName": medName]
-            docRef.setData(dataToSave, merge: true, completion: { (error) in
+            let dataToSave: [String: Any] = ["mg": 20]
+            docRef.document(medName).setData(dataToSave, merge: true, completion: { (error) in
                 if let error = error {
                     print("Error saving medication \(error.localizedDescription)")
                 } else {
