@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AddViewController: UIViewController, UINavigationControllerDelegate{
 
@@ -13,11 +14,14 @@ class AddViewController: UIViewController, UINavigationControllerDelegate{
     @IBOutlet weak var imageLabel: UILabel!
     @IBOutlet weak var imageContainerView: UIView!
     @IBOutlet weak var settingTableView: UITableView!
+    @IBOutlet weak var medNameTextBox: UITextField!
     
     let imagePicker = UIImagePickerController()
     var imagePresent = ImagePresent.needImage
     
     var settingsArray: [(title: String, detail: String)] = [("Dose", "20 mg"), ("Frequency", "Twice Daily"), ("Time and Dose", "X 1"), ("Indication", "Depression")]
+    
+    var docRef: DocumentReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +34,9 @@ class AddViewController: UIViewController, UINavigationControllerDelegate{
         addShadow(view: imageContainerView, opacity: 0.4, offset: CGSize(width: -4, height: 4), radius: 4)
         
         settingTableView.delegate = self
+        
+        docRef = Firestore.firestore().collection("users").document("medications")
+        
     }
 
     enum ImagePresent {
@@ -96,6 +103,19 @@ class AddViewController: UIViewController, UINavigationControllerDelegate{
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         // Save Info
+        
+        if let medName = medNameTextBox.text {
+            let dataToSave: [String: Any] = ["medName": medName]
+            docRef.setData(dataToSave, merge: true, completion: { (error) in
+                if let error = error {
+                    print("Error saving medication \(error.localizedDescription)")
+                } else {
+                    print("Data has been saved")
+                }
+            })
+        }
+
+       
         
         dismiss(animated: true, completion: nil)
         print("saved")

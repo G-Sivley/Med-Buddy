@@ -69,23 +69,8 @@
                                     <constraint firstItem="zd7-o4-CwS" firstAttribute="leading" secondItem="qk4-3W-uha" secondAttribute="leading" id="vEd-bo-Lj3"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JuA-7A-q4d">
-                                <rect key="frame" x="151.5" y="334" width="111" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="1HK-Vf-jan"/>
-                                </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="Fluoxetine">
-                                        <attributes>
-                                            <font key="NSFont" size="24" name="Quicksand-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="haz-50-Zf5">
-                                <rect key="frame" x="0.0" y="394" width="414" height="502"/>
+                                <rect key="frame" x="0.0" y="388" width="414" height="508"/>
                                 <color key="backgroundColor" name="DrugBackgroundGrey"/>
                                 <color key="sectionIndexBackgroundColor" name="DrugBackgroundGrey"/>
                                 <connections>
@@ -93,6 +78,11 @@
                                     <outlet property="delegate" destination="t2k-We-U2E" id="60m-cn-Aoa"/>
                                 </connections>
                             </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Medication Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dmG-Es-D0b">
+                                <rect key="frame" x="15" y="334" width="384" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5LJ-tG-AjJ"/>
                         <color key="backgroundColor" name="DrugBackgroundGrey"/>
@@ -100,14 +90,15 @@
                             <constraint firstItem="qk4-3W-uha" firstAttribute="top" secondItem="ldf-bZ-igS" secondAttribute="bottom" constant="18" id="1eC-Hr-Y5v"/>
                             <constraint firstItem="qk4-3W-uha" firstAttribute="centerX" secondItem="YM2-DS-lAS" secondAttribute="centerX" id="1wo-ea-DjQ"/>
                             <constraint firstAttribute="bottom" secondItem="haz-50-Zf5" secondAttribute="bottom" id="3l9-Xk-2nD"/>
+                            <constraint firstItem="dmG-Es-D0b" firstAttribute="leading" secondItem="5LJ-tG-AjJ" secondAttribute="leading" constant="15" id="8kd-kS-mPX"/>
                             <constraint firstItem="ldf-bZ-igS" firstAttribute="leading" secondItem="5LJ-tG-AjJ" secondAttribute="leading" id="9AV-C5-tHL"/>
                             <constraint firstItem="qk4-3W-uha" firstAttribute="centerX" secondItem="YM2-DS-lAS" secondAttribute="centerX" id="EWe-Wf-Aog"/>
-                            <constraint firstItem="JuA-7A-q4d" firstAttribute="centerX" secondItem="YM2-DS-lAS" secondAttribute="centerX" id="WNI-cf-6gC"/>
+                            <constraint firstItem="dmG-Es-D0b" firstAttribute="top" secondItem="qk4-3W-uha" secondAttribute="bottom" constant="20" id="VvM-F9-St8"/>
                             <constraint firstItem="ldf-bZ-igS" firstAttribute="trailing" secondItem="5LJ-tG-AjJ" secondAttribute="trailing" id="Z5r-Xa-D7K"/>
                             <constraint firstItem="haz-50-Zf5" firstAttribute="leading" secondItem="5LJ-tG-AjJ" secondAttribute="leading" id="bMl-JL-cHw"/>
-                            <constraint firstItem="haz-50-Zf5" firstAttribute="top" secondItem="JuA-7A-q4d" secondAttribute="bottom" constant="30" id="ckF-Mm-0Xx"/>
+                            <constraint firstItem="haz-50-Zf5" firstAttribute="top" secondItem="dmG-Es-D0b" secondAttribute="bottom" constant="20" id="p68-zu-O5P"/>
                             <constraint firstItem="5LJ-tG-AjJ" firstAttribute="trailing" secondItem="haz-50-Zf5" secondAttribute="trailing" id="qfd-o1-rFd"/>
-                            <constraint firstItem="JuA-7A-q4d" firstAttribute="top" secondItem="qk4-3W-uha" secondAttribute="bottom" constant="20" id="rvV-Aj-iie"/>
+                            <constraint firstItem="5LJ-tG-AjJ" firstAttribute="trailing" secondItem="dmG-Es-D0b" secondAttribute="trailing" constant="15" id="xuN-xm-BDe"/>
                             <constraint firstItem="ldf-bZ-igS" firstAttribute="top" secondItem="5LJ-tG-AjJ" secondAttribute="top" id="xzV-Sb-ZkH"/>
                         </constraints>
                     </view>
@@ -129,6 +120,7 @@
                         <outlet property="imageContainerView" destination="qk4-3W-uha" id="fve-qC-xke"/>
                         <outlet property="imageLabel" destination="x1k-A6-RzW" id="l4X-Zl-4vo"/>
                         <outlet property="medImage" destination="s7p-fF-9Ah" id="eTg-8x-Xkq"/>
+                        <outlet property="medNameTextBox" destination="dmG-Es-D0b" id="aUe-nL-a5y"/>
                         <outlet property="settingTableView" destination="haz-50-Zf5" id="i1X-Pi-4Fy"/>
                         <segue destination="far-PW-3pf" kind="show" identifier="showSettings" id="2WI-62-nVJ"/>
                     </connections>

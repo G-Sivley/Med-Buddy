@@ -7,5 +7,8 @@ target 'Med Buddy' do
 
   # Pods for Med Buddy
   pod 'Firebase/Analytics'
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
+  pod 'Firebase/Database'
 
 end
