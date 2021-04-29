@@ -106,11 +106,11 @@ class AddViewController: UIViewController, UINavigationControllerDelegate{
         
         if let medName = medNameTextBox.text?.capitalized {
             
-            guard let image = medImage.image else {
-                
-                print("No image")
-                return
-            }
+//            guard let image = medImage.image else {
+//                
+//                print("No image")
+//                return
+//            }
             uploadImage()
             
             let dataToSave: [String: Any] = ["name": medName, "unit": "mg", "dose": 20]
@@ -146,7 +146,7 @@ class AddViewController: UIViewController, UINavigationControllerDelegate{
             if let e = error {
                 print("Error uploading image to storage: \(e.localizedDescription)")
             } else {
-                print("Image upload complete and I got this back: \(downloadMetadata)")
+                print("Image upload complete and I got this back: \(String(describing: downloadMetadata))")
             }
         }
         

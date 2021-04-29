@@ -30,12 +30,17 @@ class ScheduleTableViewController: UITableViewController  {
         // Setup NavBar
         setupNavBar()
         
-        img = getImage()
+        loadMedications()
+        
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        loadMedications()
+        //loadMedications()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //tableView.reloadData()
     }
     
     //MARK: - Navigation Bar Setup
@@ -110,9 +115,10 @@ class ScheduleTableViewController: UITableViewController  {
             
             cell.medicationNameLabel.text = medication.name
             
-            if let medImg = medication.img {
-                cell.medicationImg.image = medImg
-            }
+            
+            cell.medicationImg.image = medication.img
+            print("med image loaded")
+            
             
             
             return cell
@@ -121,6 +127,7 @@ class ScheduleTableViewController: UITableViewController  {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.reloadData()
         deleteMedication(indexPath: indexPath)
         
     }
@@ -190,6 +197,29 @@ class ScheduleTableViewController: UITableViewController  {
     //MARK: - Data Manipulation
     
     func loadMedications() {
+        var img = UIImage()
+        
+        
+        // Image is not being populated before getting to the medications array
+        let storageRef = Storage.storage().reference(withPath: "medications/F1711963-E131-4102-AEFB-992057CAA484.jpg")
+        storageRef.getData(maxSize: 4 * 1024 * 1024) { (data, error) in
+            if let e = error {
+                print("Got an error fetching data: \(e.localizedDescription)")
+                return
+            } else {
+                if let data = data {
+                    print(data)
+                    if let imgFromData = UIImage(data: data) {
+                        img = imgFromData
+                      
+    
+                    }
+                }
+            }
+        }
+
+        
+        
         db.collection("medications").order(by: "name").addSnapshotListener { (querySnapshot, error) in
             self.medicationsArray = []
             
@@ -203,7 +233,7 @@ class ScheduleTableViewController: UITableViewController  {
                             
                             // Need to fix this later. This could be dangerous
                             
-                            let medication = Medication(name: medName, id: doc.documentID)
+                            let medication = Medication(name: medName, id: doc.documentID, img: img)
                             self.medicationsArray.append(medication)
                             
                             DispatchQueue.main.async {
@@ -223,34 +253,11 @@ class ScheduleTableViewController: UITableViewController  {
                 print("Error removing document: \(e)")
             } else {
                 print("Document was successfully removed.")
-                self.tableView.reloadData()
+                //self.tableView.reloadData()
             }
             self.loadMedications()
         }
     }
-
-    
-    func getImage() -> UIImage? {
-        
-        var img: UIImage?
-        let storageRef = Storage.storage().reference(withPath: "medications/F1711963-E131-4102-AEFB-992057CAA484.jpg")
-        storageRef.getData(maxSize: 4 * 1024 * 1024) { (data, error) in
-            if let e = error {
-                print("Got an error fetching data: \(e.localizedDescription)")
-                return
-            } else {
-                if let data = data {
-                    print(data)
-                    if let imgFromData = UIImage(data: data) {
-                        img = imgFromData
-    
-                    }
-                }
-            }
-        }
-        return img
-    }
-    
     
     //MARK: - Scroll Methods
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
