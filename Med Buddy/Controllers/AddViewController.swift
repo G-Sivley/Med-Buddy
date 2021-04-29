@@ -104,7 +104,15 @@ class AddViewController: UIViewController, UINavigationControllerDelegate{
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         // Save Info
         
-        if let medName = medNameTextBox.text {
+        if let medName = medNameTextBox.text?.capitalized {
+            
+            guard let image = medImage.image else {
+                
+                print("No image")
+                return
+            }
+            uploadImage()
+            
             let dataToSave: [String: Any] = ["name": medName, "unit": "mg", "dose": 20]
             docRef.addDocument(data: dataToSave) { (error) in
                 if let error = error {
@@ -121,6 +129,30 @@ class AddViewController: UIViewController, UINavigationControllerDelegate{
         print("saved")
     }
     
+    
+    func uploadImage() {
+        
+        // Create a random ID for path initialization
+        let randomID = UUID.init().uuidString
+
+        let uploadRef = Storage.storage().reference(withPath: "medications/\(randomID).jpg")
+        
+        guard let imageData = medImage.image?.jpegData(compressionQuality: 0.75) else {return}
+        
+        let uploadMetadata = StorageMetadata.init()
+        uploadMetadata.contentType = "image/jpeg"
+        
+        uploadRef.putData(imageData, metadata: uploadMetadata) { (downloadMetadata, error) in
+            if let e = error {
+                print("Error uploading image to storage: \(e.localizedDescription)")
+            } else {
+                print("Image upload complete and I got this back: \(downloadMetadata)")
+            }
+        }
+        
+        
+    }
+    
     //MARK: - UI Setup
     
     func makeImageCircular() {
@@ -128,6 +160,8 @@ class AddViewController: UIViewController, UINavigationControllerDelegate{
         medImage.layer.cornerRadius = medImage.frame.height / 2
     }
 }
+
+//MARK: - Image Picker Delegate
 
 extension AddViewController: UIImagePickerControllerDelegate {
    

@@ -5,7 +5,7 @@
 //  Created by Grant Sivley on 4/28/21.
 //
 
-import Foundation
+import UIKit
 
 
 struct Medication {
@@ -13,4 +13,6 @@ struct Medication {
     var dose: Int = 20
     var unit: String = "mg"
     var id: String
+    
+    var img: UIImage?
 }

@@ -108,6 +108,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="cellView" destination="ae1-pS-zhV" id="B11-DT-DP1"/>
+                <outlet property="medicationImg" destination="axp-yx-bl7" id="fm8-p2-BqT"/>
                 <outlet property="medicationNameLabel" destination="fKH-cR-30O" id="dQQ-x7-1rY"/>
             </connections>
             <point key="canvasLocation" x="221.01449275362322" y="160.37946428571428"/>

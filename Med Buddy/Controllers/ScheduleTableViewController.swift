@@ -16,6 +16,8 @@ class ScheduleTableViewController: UITableViewController  {
     
     var medicationsArray: [Medication] = []
     
+    var img: UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,6 +29,8 @@ class ScheduleTableViewController: UITableViewController  {
         
         // Setup NavBar
         setupNavBar()
+        
+        img = getImage()
         
     }
     
@@ -105,6 +109,11 @@ class ScheduleTableViewController: UITableViewController  {
             
             
             cell.medicationNameLabel.text = medication.name
+            
+            if let medImg = medication.img {
+                cell.medicationImg.image = medImg
+            }
+            
             
             return cell
             
@@ -191,6 +200,9 @@ class ScheduleTableViewController: UITableViewController  {
                     for doc in snapshotDocuments {
                         let data = doc.data()
                         if let medName = data["name"] as? String {
+                            
+                            // Need to fix this later. This could be dangerous
+                            
                             let medication = Medication(name: medName, id: doc.documentID)
                             self.medicationsArray.append(medication)
                             
@@ -204,6 +216,7 @@ class ScheduleTableViewController: UITableViewController  {
         }
     }
     
+    // Function that deletes a medication based on its index path
     func deleteMedication(indexPath: IndexPath) {
         db.collection("medications").document(medicationsArray[indexPath.row - 3].id).delete { (error) in
             if let e = error {
@@ -212,7 +225,30 @@ class ScheduleTableViewController: UITableViewController  {
                 print("Document was successfully removed.")
                 self.tableView.reloadData()
             }
+            self.loadMedications()
         }
+    }
+
+    
+    func getImage() -> UIImage? {
+        
+        var img: UIImage?
+        let storageRef = Storage.storage().reference(withPath: "medications/F1711963-E131-4102-AEFB-992057CAA484.jpg")
+        storageRef.getData(maxSize: 4 * 1024 * 1024) { (data, error) in
+            if let e = error {
+                print("Got an error fetching data: \(e.localizedDescription)")
+                return
+            } else {
+                if let data = data {
+                    print(data)
+                    if let imgFromData = UIImage(data: data) {
+                        img = imgFromData
+    
+                    }
+                }
+            }
+        }
+        return img
     }
     
     

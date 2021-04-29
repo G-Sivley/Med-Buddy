@@ -10,6 +10,7 @@ target 'Med Buddy' do
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
   pod 'Firebase/Database'
+  pod 'Firebase/Storage'
 
 end
 
