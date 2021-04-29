@@ -17,6 +17,7 @@
 		90233F192608F3780033221A /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90233F182608F3780033221A /* ViewControllerExtension.swift */; };
 		905B442A26292F4500F03E5C /* MedListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905B442926292F4500F03E5C /* MedListTableViewController.swift */; };
 		905BAF8C26101D2500EDF78B /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905BAF8B26101D2500EDF78B /* ScheduleTableViewController.swift */; };
+		9068BC4E263A61F700EAD52E /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9068BC4D263A61F700EAD52E /* Medication.swift */; };
 		906EFA192612A0FF006A3647 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 906EFA172612A0FF006A3647 /* Schedule.storyboard */; };
 		907812F126112C2700EB59ED /* TimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907812F026112C2700EB59ED /* TimeLabel.swift */; };
 		907812F8261146B400EB59ED /* TimeOfDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907812F6261146B400EB59ED /* TimeOfDayCell.swift */; };
@@ -60,6 +61,7 @@
 		90233F182608F3780033221A /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		905B442926292F4500F03E5C /* MedListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedListTableViewController.swift; sourceTree = "<group>"; };
 		905BAF8B26101D2500EDF78B /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
+		9068BC4D263A61F700EAD52E /* Medication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
 		906EFA182612A0FF006A3647 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Schedule.storyboard; sourceTree = "<group>"; };
 		907812F026112C2700EB59ED /* TimeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLabel.swift; sourceTree = "<group>"; };
 		907812F6261146B400EB59ED /* TimeOfDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeOfDayCell.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 		900B7346260D935E003A1703 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9068BC4D263A61F700EAD52E /* Medication.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				90B8159B26085A2C008E52F4 /* MoreViewController.swift in Sources */,
 				90FA5F8D261561360042B573 /* AddMedButtonTableViewCell.swift in Sources */,
 				90F517D2262E97DB00D9811B /* SettingViewController.swift in Sources */,
+				9068BC4E263A61F700EAD52E /* Medication.swift in Sources */,
 				90EA099226072BD900CABE30 /* AppDelegate.swift in Sources */,
 				90D3AA6E2607ED8300894F33 /* Constants.swift in Sources */,
 				907812F8261146B400EB59ED /* TimeOfDayCell.swift in Sources */,

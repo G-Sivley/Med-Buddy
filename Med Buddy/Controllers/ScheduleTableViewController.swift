@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import Firebase
 
 class ScheduleTableViewController: UITableViewController  {
-    let medicationsArray = ["Fluoxetine", "Prasugrel", "Ibuprofen"]
     
     let timeLabel = TimeLabel()
+    
+    let db = Firestore.firestore()
+    
+    var medicationsArray: [Medication] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +27,11 @@ class ScheduleTableViewController: UITableViewController  {
         
         // Setup NavBar
         setupNavBar()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadMedications()
     }
     
     //MARK: - Navigation Bar Setup
@@ -61,7 +70,7 @@ class ScheduleTableViewController: UITableViewController  {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 3 + medicationsArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -74,22 +83,37 @@ class ScheduleTableViewController: UITableViewController  {
             return cell
         }
         // Calendar Location
-        if indexPath.row == 1 {
+        else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: K.Cells.calendarReusableCell) as! CalendarTableViewCell
             
             return cell
         }
         // Divider cell location
-        if indexPath.row == 2 {
+        else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: K.Cells.timeOfDayReusableCell, for: indexPath) as! TimeOfDayCell
             return cell
             
-        } else {
-            // standard med cell
+        }
+        
+        // standard med cell
+        else {
+            
+            let medication = medicationsArray[indexPath.row - 3]
+            
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: K.Cells.medicationReusableCell, for: indexPath) as! MedicationTableViewCell
+            
+            
+            cell.medicationNameLabel.text = medication.name
+            
             return cell
             
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        deleteMedication(indexPath: indexPath)
+        
     }
 
     //MARK: - Nib Registration
@@ -153,6 +177,45 @@ class ScheduleTableViewController: UITableViewController  {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //MARK: - Data Manipulation
+    
+    func loadMedications() {
+        db.collection("medications").order(by: "name").addSnapshotListener { (querySnapshot, error) in
+            self.medicationsArray = []
+            
+            if let e = error {
+                print("There was an error retrieving data: \(e)")
+            } else {
+                if let snapshotDocuments = querySnapshot?.documents {
+                    for doc in snapshotDocuments {
+                        let data = doc.data()
+                        if let medName = data["name"] as? String {
+                            let medication = Medication(name: medName, id: doc.documentID)
+                            self.medicationsArray.append(medication)
+                            
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func deleteMedication(indexPath: IndexPath) {
+        db.collection("medications").document(medicationsArray[indexPath.row - 3].id).delete { (error) in
+            if let e = error {
+                print("Error removing document: \(e)")
+            } else {
+                print("Document was successfully removed.")
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    
     //MARK: - Scroll Methods
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard let height = navigationController?.navigationBar.frame.height else { return }

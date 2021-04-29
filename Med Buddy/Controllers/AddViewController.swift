@@ -105,14 +105,14 @@ class AddViewController: UIViewController, UINavigationControllerDelegate{
         // Save Info
         
         if let medName = medNameTextBox.text {
-            let dataToSave: [String: Any] = ["mg": 20]
-            docRef.document(medName).setData(dataToSave, merge: true, completion: { (error) in
+            let dataToSave: [String: Any] = ["name": medName, "unit": "mg", "dose": 20]
+            docRef.addDocument(data: dataToSave) { (error) in
                 if let error = error {
                     print("Error saving medication \(error.localizedDescription)")
                 } else {
                     print("Data has been saved")
                 }
-            })
+            }
         }
 
        
