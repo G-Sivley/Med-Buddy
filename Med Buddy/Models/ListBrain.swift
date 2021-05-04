@@ -18,6 +18,7 @@ class ListBrain {
     var delegate: ListBrainDelegate?
     
     private let db = Firestore.firestore()
+    var docRef = Firestore.firestore().collection("medications")
     var medicationList: [Medication] = []
     
     func loadMedications() {
@@ -48,16 +49,26 @@ class ListBrain {
         }
     }
     
+    func addMedication(name medName: String) {
+        let dataToSave: [String: Any] = ["name": medName, "unit": "mg", "dose": 20]
+        docRef.addDocument(data: dataToSave) { (error) in
+            if let error = error {
+                print("Error saving medication \(error.localizedDescription)")
+            } else {
+                print("Data has been saved")
+                self.loadMedications()
+            }
+        }
+    }
+    
+    
     func deleteMedication(indexPath: IndexPath) {
         db.collection("medications").document(medicationList[indexPath.row - 3].id).delete { (error) in
             if let e = error {
                 print("Error removing document: \(e)")
             } else {
                 print("Document was successfully removed.")
-                
             }
-            
-            
         }
         self.medicationList.remove(at: indexPath.row - 3)
     }

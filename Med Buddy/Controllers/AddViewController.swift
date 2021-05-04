@@ -21,7 +21,9 @@ class AddViewController: UIViewController, UINavigationControllerDelegate{
     
     var settingsArray: [(title: String, detail: String)] = [("Dose", "20 mg"), ("Frequency", "Twice Daily"), ("Time and Dose", "X 1"), ("Indication", "Depression")]
     
-    var docRef: CollectionReference!
+    
+    
+    let listBrain = ListBrain()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +36,6 @@ class AddViewController: UIViewController, UINavigationControllerDelegate{
         addShadow(view: imageContainerView, opacity: 0.4, offset: CGSize(width: -4, height: 4), radius: 4)
         
         settingTableView.delegate = self
-        
-        docRef = Firestore.firestore().collection("medications")
         
     }
 
@@ -111,22 +111,12 @@ class AddViewController: UIViewController, UINavigationControllerDelegate{
 //                print("No image")
 //                return
 //            }
+            
+            listBrain.addMedication(name: medName)
             uploadImage()
             
-            let dataToSave: [String: Any] = ["name": medName, "unit": "mg", "dose": 20]
-            docRef.addDocument(data: dataToSave) { (error) in
-                if let error = error {
-                    print("Error saving medication \(error.localizedDescription)")
-                } else {
-                    print("Data has been saved")
-                }
-            }
         }
-
-       
-        
         dismiss(animated: true, completion: nil)
-        print("saved")
     }
     
     

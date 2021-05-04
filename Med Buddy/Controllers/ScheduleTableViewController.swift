@@ -26,10 +26,9 @@ class ScheduleTableViewController: UITableViewController {
         
         // Setup NavBar
         setupNavBar()
-        
-        loadList()
-        
+    
         listBrain.delegate = self
+        listBrain.loadMedications()
         
         
     }
@@ -195,17 +194,6 @@ class ScheduleTableViewController: UITableViewController {
      // Pass the selected object to the new view controller.
      }
      */
-    
-    //MARK: - Data Manipulation
-    
-    func loadList() {
-        listBrain.loadMedications()
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
-    }
-    
-    // Function that deletes a medication based on its index path
     
     
     //MARK: - Scroll Methods
