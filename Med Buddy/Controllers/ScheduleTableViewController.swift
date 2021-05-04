@@ -8,21 +8,18 @@
 import UIKit
 import Firebase
 
-class ScheduleTableViewController: UITableViewController  {
+class ScheduleTableViewController: UITableViewController {
     
     let timeLabel = TimeLabel()
     
-    let db = Firestore.firestore()
+    var listBrain = ListBrain()
     
-    var medicationsArray: [Medication] = []
+    let numberOfNonMedicationCells = 3
     
     var img: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view
-        
         
         // Register and setup medication table
         registerNibs()
@@ -30,17 +27,14 @@ class ScheduleTableViewController: UITableViewController  {
         // Setup NavBar
         setupNavBar()
         
-        loadMedications()
+        loadList()
+        
+        listBrain.delegate = self
         
         
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        //loadMedications()
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
-        //tableView.reloadData()
+        tableView.reloadData()
     }
     
     //MARK: - Navigation Bar Setup
@@ -79,7 +73,11 @@ class ScheduleTableViewController: UITableViewController  {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3 + medicationsArray.count
+        
+        // Number of cells plus medications
+        
+        return numberOfNonMedicationCells + listBrain.medicationList.count
+       
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -107,7 +105,8 @@ class ScheduleTableViewController: UITableViewController  {
         // standard med cell
         else {
             
-            let medication = medicationsArray[indexPath.row - 3]
+            // This could be problematic if there is a medication before a non medication cell.
+            let medication = listBrain.medicationList[indexPath.row - numberOfNonMedicationCells]
             
             
             let cell = tableView.dequeueReusableCell(withIdentifier: K.Cells.medicationReusableCell, for: indexPath) as! MedicationTableViewCell
@@ -135,27 +134,11 @@ class ScheduleTableViewController: UITableViewController  {
                 }
             }
             
-            
-            
-            
-            
-            print("med image loaded")
-            
-            
-            
-            
-            
-            
+
             
             return cell
             
         }
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.reloadData()
-        deleteMedication(indexPath: indexPath)
-        
     }
     
     //MARK: - Nib Registration
@@ -175,32 +158,25 @@ class ScheduleTableViewController: UITableViewController  {
         
     }
     
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
     
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
+    // Override to support conditional editing of the table view.
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
     
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
+    
+    
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            
+            listBrain.deleteMedication(indexPath: indexPath)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+        }
+    }
     
     /*
      // Override to support conditional rearranging of the table view.
@@ -222,52 +198,18 @@ class ScheduleTableViewController: UITableViewController  {
     
     //MARK: - Data Manipulation
     
-    func loadMedications() {
-        
-        self.db.collection("medications").order(by: "name").addSnapshotListener { (querySnapshot, error) in
-            self.medicationsArray = []
-            
-            if let e = error {
-                print("There was an error retrieving data: \(e)")
-            } else {
-                if let snapshotDocuments = querySnapshot?.documents {
-                    for doc in snapshotDocuments {
-                        let data = doc.data()
-                        if let medName = data["name"] as? String {
-                            
-                            // Need to fix this later. This could be dangerous
-                            
-                            let medication = Medication(name: medName, id: doc.documentID)
-                            self.medicationsArray.append(medication)
-                            
-                            DispatchQueue.main.async {
-                                self.tableView.reloadData()
-                            }
-                        }
-                    }
-                }
-            }
+    func loadList() {
+        listBrain.loadMedications()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
-        
     }
-    
-    
-    
     
     // Function that deletes a medication based on its index path
-    func deleteMedication(indexPath: IndexPath) {
-        db.collection("medications").document(medicationsArray[indexPath.row - 3].id).delete { (error) in
-            if let e = error {
-                print("Error removing document: \(e)")
-            } else {
-                print("Document was successfully removed.")
-                //self.tableView.reloadData()
-            }
-            self.loadMedications()
-        }
-    }
+    
     
     //MARK: - Scroll Methods
+    
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard let height = navigationController?.navigationBar.frame.height else { return }
         timeLabel.moveAndResizeLabel(for: height)
@@ -275,9 +217,20 @@ class ScheduleTableViewController: UITableViewController  {
 }
 
 //MARK: - Add Button Delegate
+
 extension ScheduleTableViewController: AddMedsDelegate {
     func addMedTapped(at index: IndexPath) {
         performSegue(withIdentifier: K.Segue.addMedSegue, sender: self)
     }
     
+}
+
+
+//MARK: - ListBrain Delegate
+
+extension ScheduleTableViewController: ListBrainDelegate {
+    
+    func didLoadList(_ listBrain: ListBrain) {
+        tableView.reloadData()
+    }
 }
