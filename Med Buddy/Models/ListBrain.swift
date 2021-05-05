@@ -26,21 +26,33 @@ class ListBrain {
         db.collection("medications").order(by: "name").addSnapshotListener { (querySnapshot, error) in
             self.medicationList = []
             
+            // Error loading
+            // Need to make better error handling
             if let e = error {
                 print("There was an error retrieving data: \(e)")
             } else {
+                // Correctly loaded
                 if let snapshotDocuments = querySnapshot?.documents {
+                    
+                    // Create variable for checking when the last document is
+                    var count = 0
+                    
                     for doc in snapshotDocuments {
+                        count += 1
                         let data = doc.data()
                         if let medName = data["name"] as? String {
                             
-                            // Need to fix this later. This could be dangerous
-                            
-                            let medication = Medication(name: medName, id: doc.documentID)
-                            self.medicationList.append(medication)
-                            
-                            DispatchQueue.main.async {
+                            // Closure to add the image after medicationImg has been retreived
+                            self.retreiveImg { (medicationImg) in
+                                let medication = Medication(name: medName, id: doc.documentID, img: medicationImg)
+                                self.medicationList.append(medication)
+                                
+                                
+                                // This fires every time it is loaded
+                                // I would like this to only fire once completed
                                 self.delegate?.didLoadList(self)
+                                print("firing")
+                                
                             }
                         }
                     }
@@ -71,5 +83,24 @@ class ListBrain {
             }
         }
         self.medicationList.remove(at: indexPath.row - 3)
+    }
+    
+    
+    func retreiveImg(completionHandler: @escaping (UIImage?) -> Void) {
+        // Create closure that retreives Img from Storage
+        let storageRef = Storage.storage().reference(withPath: "medications/F1711963-E131-4102-AEFB-992057CAA484.jpg")
+        
+        storageRef.getData(maxSize: 4 * 1024 * 1024) { (data, error) in
+            if let e = error {
+                print("Got an error fetching data: \(e.localizedDescription)")
+                
+            } else {
+                if let data = data {
+                    if let imgFromData = UIImage(data: data) {
+                        completionHandler(imgFromData)
+                    }
+                }
+            }
+        }
     }
 }

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Firebase
 
 class ScheduleTableViewController: UITableViewController {
     
@@ -114,26 +113,9 @@ class ScheduleTableViewController: UITableViewController {
             cell.medicationNameLabel.text = medication.name
             
             
-            // This works as expected, but has major code smell. I will refactor to ensure that we are not loading the images multiple times during table initializations.
-            let storageRef = Storage.storage().reference(withPath: "medications/F1711963-E131-4102-AEFB-992057CAA484.jpg")
-            storageRef.getData(maxSize: 4 * 1024 * 1024) { (data, error) in
-                if let e = error {
-                    print("Got an error fetching data: \(e.localizedDescription)")
-                    return
-                } else {
-                    if let data = data {
-                        DispatchQueue.main.async {
-                            if let imgFromData = UIImage(data: data) {
-                                cell.medicationImg.image = imgFromData
-                                print("Image Associated")
-                                
-                            }
-                        }
-                    }
-                }
-            }
+            cell.medicationImg.image = medication.img
             
-
+            
             
             return cell
             
@@ -176,14 +158,6 @@ class ScheduleTableViewController: UITableViewController {
             
         }
     }
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
     
     /*
      // MARK: - Navigation
