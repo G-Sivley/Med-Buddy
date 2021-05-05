@@ -21,6 +21,9 @@ class ListBrain {
     var docRef = Firestore.firestore().collection("medications")
     var medicationList: [Medication] = []
     
+    
+    //MARK: - CRUD Methods
+    
     func loadMedications() {
         
         db.collection("medications").order(by: "name").addSnapshotListener { (querySnapshot, error) in
@@ -43,7 +46,7 @@ class ListBrain {
                         if let medName = data["name"] as? String {
                             
                             // Closure to add the image after medicationImg has been retreived
-                            self.retreiveImg { (medicationImg) in
+                            self.retrieveImg { (medicationImg) in
                                 let medication = Medication(name: medName, id: doc.documentID, img: medicationImg)
                                 self.medicationList.append(medication)
                                 
@@ -85,8 +88,9 @@ class ListBrain {
         self.medicationList.remove(at: indexPath.row - 3)
     }
     
+    //MARK: - Image Methods
     
-    func retreiveImg(completionHandler: @escaping (UIImage?) -> Void) {
+    func retrieveImg(completionHandler: @escaping (UIImage?) -> Void) {
         // Create closure that retreives Img from Storage
         let storageRef = Storage.storage().reference(withPath: "medications/F1711963-E131-4102-AEFB-992057CAA484.jpg")
         
@@ -103,4 +107,24 @@ class ListBrain {
             }
         }
     }
+    
+    func uploadImage(imageData: Data) {
+        
+        // Create a random ID for path initialization
+        let randomID = UUID.init().uuidString
+
+        let uploadRef = Storage.storage().reference(withPath: "medications/\(randomID).jpg")
+        
+        let uploadMetadata = StorageMetadata.init()
+        uploadMetadata.contentType = "image/jpeg"
+        
+        uploadRef.putData(imageData, metadata: uploadMetadata) { (downloadMetadata, error) in
+            if let e = error {
+                print("Error uploading image to storage: \(e.localizedDescription)")
+            } else {
+                print("Image upload complete and I got this back: \(String(describing: downloadMetadata))")
+            }
+        }
+    }
+    
 }

@@ -106,42 +106,25 @@ class AddViewController: UIViewController, UINavigationControllerDelegate{
         
         if let medName = medNameTextBox.text?.capitalized {
             
-//            guard let image = medImage.image else {
-//                
-//                print("No image")
-//                return
-//            }
-            
+            // Error checking
+            guard let image = medImage.image else {
+                
+                basicAlert(title: "Image", msg: "No image has been provided.")
+                return
+            }
+            print("Done")
             listBrain.addMedication(name: medName)
-            uploadImage()
+            
+            if let img = medImage.image?.jpegData(compressionQuality: 0.75) {
+                listBrain.uploadImage(imageData: img)
+            }
             
         }
         dismiss(animated: true, completion: nil)
     }
     
     
-    func uploadImage() {
-        
-        // Create a random ID for path initialization
-        let randomID = UUID.init().uuidString
-
-        let uploadRef = Storage.storage().reference(withPath: "medications/\(randomID).jpg")
-        
-        guard let imageData = medImage.image?.jpegData(compressionQuality: 0.75) else {return}
-        
-        let uploadMetadata = StorageMetadata.init()
-        uploadMetadata.contentType = "image/jpeg"
-        
-        uploadRef.putData(imageData, metadata: uploadMetadata) { (downloadMetadata, error) in
-            if let e = error {
-                print("Error uploading image to storage: \(e.localizedDescription)")
-            } else {
-                print("Image upload complete and I got this back: \(String(describing: downloadMetadata))")
-            }
-        }
-        
-        
-    }
+    
     
     //MARK: - UI Setup
     
