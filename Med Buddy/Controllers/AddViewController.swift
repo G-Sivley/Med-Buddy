@@ -107,17 +107,26 @@ class AddViewController: UIViewController, UINavigationControllerDelegate{
         if let medName = medNameTextBox.text?.capitalized {
             
             // Error checking
-            guard let image = medImage.image else {
+            guard medImage.image != nil else {
                 
                 basicAlert(title: "Image", msg: "No image has been provided.")
                 return
             }
-            print("Done")
-            listBrain.addMedication(name: medName)
+            
+            // Want to associate ID with image. Then connect that id to med document.
+            var imgID: String?
             
             if let img = medImage.image?.jpegData(compressionQuality: 0.75) {
-                listBrain.uploadImage(imageData: img)
+                imgID = listBrain.makeImgID()
+                print(imgID!)
+                guard imgID != nil else {
+                    fatalError("imgID was not formulated. This should never happen.")
+                }
+                listBrain.uploadImage(imageData: img, randomID: imgID!)
             }
+            listBrain.addMedication(name: medName, imgID: imgID)
+            
+            
             
         }
         dismiss(animated: true, completion: nil)

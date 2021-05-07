@@ -45,9 +45,12 @@ class ListBrain {
                         let data = doc.data()
                         if let medName = data["name"] as? String {
                             
+                            // Possible imgID
+                            let imgID = data["imgID"] as? String
+                            
                             // Closure to add the image after medicationImg has been retreived
-                            self.retrieveImg { (medicationImg) in
-                                let medication = Medication(name: medName, id: doc.documentID, img: medicationImg)
+                            self.retrieveImg(imgID: imgID) { (medicationImg) in
+                                let medication = Medication(name: medName, id: doc.documentID, img: medicationImg, imgID: imgID)
                                 self.medicationList.append(medication)
                                 
                                 
@@ -64,8 +67,8 @@ class ListBrain {
         }
     }
     
-    func addMedication(name medName: String) {
-        let dataToSave: [String: Any] = ["name": medName, "unit": "mg", "dose": 20]
+    func addMedication(name medName: String, imgID: String?) {
+        let dataToSave: [String: Any] = ["name": medName, "unit": "mg", "dose": 20, "imgID": imgID as Any]
         docRef.addDocument(data: dataToSave) { (error) in
             if let error = error {
                 print("Error saving medication \(error.localizedDescription)")
@@ -90,29 +93,34 @@ class ListBrain {
     
     //MARK: - Image Methods
     
-    func retrieveImg(completionHandler: @escaping (UIImage?) -> Void) {
-        // Create closure that retreives Img from Storage
-        let storageRef = Storage.storage().reference(withPath: "medications/F1711963-E131-4102-AEFB-992057CAA484.jpg")
-        
-        storageRef.getData(maxSize: 4 * 1024 * 1024) { (data, error) in
-            if let e = error {
-                print("Got an error fetching data: \(e.localizedDescription)")
-                
-            } else {
-                if let data = data {
-                    if let imgFromData = UIImage(data: data) {
-                        completionHandler(imgFromData)
+    func retrieveImg(imgID: String?, completionHandler: @escaping (UIImage) -> Void) {
+        if let id = imgID {
+            
+            // Create closure that retreives Img from Storage
+            let storageRef = Storage.storage().reference(withPath: "medications/\(id).jpg")
+            
+            storageRef.getData(maxSize: 4 * 1024 * 1024) { (data, error) in
+                if let e = error {
+                    print("Got an error fetching data: \(e.localizedDescription)")
+                    completionHandler(UIImage(systemName: "pills.fill")!)
+                    
+                } else {
+                    if let data = data {
+                        if let imgFromData = UIImage(data: data) {
+                            completionHandler(imgFromData)
+                        }
                     }
                 }
             }
         }
+        
+        else {
+            completionHandler(UIImage(systemName: "pills.fill")!)
+        }
     }
     
-    func uploadImage(imageData: Data) {
+    func uploadImage(imageData: Data, randomID: String) {
         
-        // Create a random ID for path initialization
-        let randomID = UUID.init().uuidString
-
         let uploadRef = Storage.storage().reference(withPath: "medications/\(randomID).jpg")
         
         let uploadMetadata = StorageMetadata.init()
@@ -127,4 +135,9 @@ class ListBrain {
         }
     }
     
+    func makeImgID() -> String {
+        // Create a random ID for path initialization
+        let randomID = UUID.init().uuidString
+        return randomID
+    }
 }

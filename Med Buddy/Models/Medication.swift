@@ -15,4 +15,5 @@ struct Medication {
     var id: String
     
     var img: UIImage?
+    var imgID: String?
 }
