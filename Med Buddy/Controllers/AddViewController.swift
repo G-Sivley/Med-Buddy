@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class AddViewController: UIViewController, UINavigationControllerDelegate{
+class AddViewController: UIViewController, UINavigationControllerDelegate {
 
     @IBOutlet weak var medImage: UIImageView!
     @IBOutlet weak var imageLabel: UILabel!
@@ -107,22 +107,23 @@ class AddViewController: UIViewController, UINavigationControllerDelegate{
         if let medName = medNameTextBox.text?.capitalized {
             
             // Error checking
-            guard medImage.image != nil else {
-                
-                basicAlert(title: "Image", msg: "No image has been provided.")
-                return
-            }
+//            guard medImage.image != nil else {
+//
+//                basicAlert(title: "Image", msg: "No image has been provided.")
+//                return
+//            }
             
             // Want to associate ID with image. Then connect that id to med document.
             var imgID: String?
             
-            if let img = medImage.image?.jpegData(compressionQuality: 0.75) {
+            let img = medImage.image?.jpegData(compressionQuality: 0.75)
+            if img != nil {
                 imgID = listBrain.makeImgID()
                 print(imgID!)
                 guard imgID != nil else {
                     fatalError("imgID was not formulated. This should never happen.")
                 }
-                listBrain.uploadImage(imageData: img, randomID: imgID!)
+                listBrain.uploadImage(imageData: img!, randomID: imgID!)
             }
             listBrain.addMedication(name: medName, imgID: imgID)
             

@@ -180,9 +180,15 @@ class ScheduleTableViewController: UITableViewController {
 
 //MARK: - Add Button Delegate
 
-extension ScheduleTableViewController: AddMedsDelegate {
+extension ScheduleTableViewController: AddMedsDelegate, TimeOfDayAddDelegate {
     func addMedTapped(at index: IndexPath) {
         performSegue(withIdentifier: K.Segue.addMedSegue, sender: self)
+    }
+    
+    // This is not firing for some reason
+    func addTimeOfDayTapped(at index: IndexPath) {
+        performSegue(withIdentifier: K.Segue.addMedSegue, sender: self)
+        print("tapped")
     }
     
 }
